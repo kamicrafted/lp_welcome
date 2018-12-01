@@ -54,6 +54,15 @@ export default {
   display: flex;
   align-items: center;
   font-weight: 500;
+
+  > a {
+    opacity: .7;
+    transition: all .15s $ease-out-quad;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
 .links {
