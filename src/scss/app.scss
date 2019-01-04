@@ -2,7 +2,7 @@
 Color Palette
 ===================================================== */
 $color-orange: #FA4616;
-$color-blue: #1c9fd0;
+$color-blue: #1C7AE4;
 $color-blue-light: #73DAFF;
 $color-green: #4CB521;
 $color-warning: #ee2828;
@@ -13,10 +13,16 @@ $color-light-dark: #535657;
 $color-dark-sand: #79746c;
 $color-light-sand: #c4c0b8;
 $color-light-grey: #d8d8d8;
-$color-site-bg: #090513;
+$color-site-bg: #15101E;
+$color-header: #15101E;
 $color-zebra-odd: rgba(black, .1);
 $color-zebra-hover: rgba(white, .05) !important;
+$color-footer: #1F1F22;
 
+$gradient-blue-purple-light: linear-gradient(-226deg, #667EEA 0%, #764CA3 100%, #764BA2 100%);
+$gradient-blue-purple-dark: linear-gradient(-226deg, #6A11CB 0%, #2575FC 100%);
+$gradient-orange-purple: linear-gradient(-226deg, #FA4616 0%, #721E4E 100%);
+$gradient-grey-purple: linear-gradient(-139deg, #43465D 0%, #212138 100%);
 
 $ease-in-quad:      cubic-bezier(0.550,  0.085, 0.680, 0.530);
 $ease-in-cubic:     cubic-bezier(0.550,  0.055, 0.675, 0.190);
@@ -44,6 +50,8 @@ $ease-in-out-sine:  cubic-bezier(0.445,  0.050, 0.550, 0.950);
 $ease-in-out-expo:  cubic-bezier(1.000,  0.000, 0.000, 1.000);
 $ease-in-out-circ:  cubic-bezier(0.785,  0.135, 0.150, 0.860);
 $ease-in-out-back:  cubic-bezier(0.680, -0.550, 0.265, 1.550);
+
+$site-max-width: 1400px;
 
 
 /* ===============================
@@ -100,4 +108,11 @@ Fonts
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }

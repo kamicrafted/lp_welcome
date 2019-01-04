@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Header />
-    <router-view/>
+    <Header :mode="mode" />
+    <router-view @header-mode="setMode" />
   </div>
 </template>
 
@@ -10,8 +10,18 @@ import Header from './components/Header'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      mode: 'transparent'
+    }
+  },
   components: {
     Header
+  },
+  methods: {
+    setMode (value) {
+      this.mode = value
+    }
   }
 }
 </script>
@@ -28,6 +38,7 @@ body, html {
   background: $color-site-bg;
   color: white;
   font-family: Qanelas, arial, sans-serif;
+  font-weight: 500;
 }
 
 #app,
@@ -36,42 +47,122 @@ body, html {
   height: 100%;
 }
 
-h1 {
-  text-transform: uppercase;
-  font-size: 54px;
-  line-height: 1.1;
-  margin-bottom: 0;
-}
+// button {
+//   padding: 12px 18px;
+//   border: none;
+//   background: $color-orange;
+//   color: white;
+//   font-size: 18px;
+//   font-weight: 700;
+//   border-radius: 2px;
+//   transition: all .25s $ease-out-circ;
+//   cursor: pointer;
 
-button {
-  padding: 12px 18px;
-  border: none;
-  background: $color-orange;
-  color: white;
-  font-size: 18px;
-  font-weight: 700;
-  border-radius: 2px;
-  transition: all .25s $ease-out-circ;
-  cursor: pointer;
-
-  &:hover {
-    transform: scale(1.05);
+//   &:hover {
+//     transform: scale(1.05);
     
-  }
-}
+//   }
+// }
 
 a {
   color: white;
 }
 
-.scrollprompt {
-  display: block;
-  bottom: 30px;
-  color: white;
-  width: 100%;
-  text-align: center;
-  animation: bounce 4s infinite;
-  pointer-events: none;
+p {
+  line-height: 1.4;
+}
+
+.btn {
+  border: none;
+  font-family: Qanelas, arial, sans-serif;
+  outline: none;
+  cursor: pointer;
+  transition: all .15s $ease-out-quad;
+
+  &--cta {
+    padding: 16px 24px;
+    background: $color-orange;
+    color: white;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 700;
+    // text-transform: uppercase;
+    box-shadow: 0 3px 8px rgba(black, .2);
+
+    &:hover {
+      background: white;
+      color: $color-site-bg;
+      transform: scale(1.05);
+      box-shadow: 0 5px 12px rgba(black, .2);
+    }
+  }
+
+  &--cta-white {
+    display: inline-block;
+    text-decoration: none;
+    padding: 16px 24px;
+    background: white;
+    color: $color-site-bg;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 700;
+    // text-transform: uppercase;
+    box-shadow: 0 3px 8px rgba(black, .2);
+
+    &:hover {
+      background: white;
+      color: $color-site-bg;
+      transform: scale(1.05);
+      box-shadow: 0 5px 12px rgba(black, .2);
+    }
+  }
+
+  &--ghost {
+    padding: 16px 24px;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 700;
+
+    &:hover {
+      background: white;
+      color: $color-site-bg;
+      transform: scale(1.05);
+      box-shadow: 0 5px 12px rgba(black, .2);
+    }
+  }
+
+  &--download {
+    display: block;
+    padding: 15px 20px;
+    background: $color-blue;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 0 0 6px 6px;
+  }
+}
+
+.flickity-viewport {
+  overflow: visible !important;
+}
+
+.flickity-prev-next-button {
+  border-radius: 0 !important;
+  background: black !important;
+
+  &.previous {
+    left: 0 !important;
+  } 
+
+  &.next {
+    right: 0 !important;
+  } 
+}
+
+.flickity-button-icon {
+  fill: white !important;
 }
 
 @keyframes bounce {

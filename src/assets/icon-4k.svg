@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="104px" height="57px" viewBox="0 0 104 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Combined Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-748.000000, -1691.000000)" fill="#FFFFFF" fill-rule="nonzero" id="Group-19">
+            <g transform="translate(145.000000, 1435.000000)">
+                <g id="Group-15" transform="translate(460.000000, 256.000000)">
+                    <g id="Group-18" transform="translate(143.000000, 0.000000)">
+                        <path d="M6,0 L98,0 C101.313708,-6.08718376e-16 104,2.6862915 104,6 L104,51 C104,54.3137085 101.313708,57 98,57 L6,57 C2.6862915,57 4.05812251e-16,54.3137085 0,51 L0,6 C-4.05812251e-16,2.6862915 2.6862915,6.08718376e-16 6,0 Z M31.430854,32.2354571 L22.5834711,32.2354571 L31.3493113,21.5914127 L31.430854,21.5914127 L31.430854,32.2354571 Z M15,37.8587258 L31.430854,37.8587258 L31.430854,43 L42.6837465,43 L42.6837465,37.8587258 L47.4947658,37.8587258 L47.4947658,32.2354571 L42.6837465,32.2354571 L42.6837465,14.7631579 L28.9030303,14.7631579 L15,31.1108033 L15,37.8587258 Z M73.4253444,43 L89,43 L75.830854,27.0941828 L87.6953168,14 L72.4060606,14 L61.8055097,27.8975069 L73.4253444,43 Z M49.2479339,43 L61.6424243,43 L61.6424243,14 L49.2479339,14 L49.2479339,43 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
