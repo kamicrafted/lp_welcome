@@ -78,15 +78,18 @@ p {
   outline: none;
   cursor: pointer;
   transition: all .15s $ease-out-quad;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 16px 24px;
+    @media only screen and (max-width: 710px) {
+      font-size: 16px;
+    }
 
   &--cta {
-    padding: 16px 24px;
     background: $color-orange;
     color: white;
-    border-radius: 4px;
-    font-size: 18px;
-    font-weight: 700;
-    // text-transform: uppercase;
     box-shadow: 0 3px 8px rgba(black, .2);
 
     &:hover {
@@ -100,13 +103,10 @@ p {
   &--cta-white {
     display: inline-block;
     text-decoration: none;
-    padding: 16px 24px;
     background: white;
     color: $color-site-bg;
     border-radius: 4px;
-    font-size: 18px;
-    font-weight: 700;
-    // text-transform: uppercase;
+
     box-shadow: 0 3px 8px rgba(black, .2);
 
     &:hover {
@@ -118,13 +118,9 @@ p {
   }
 
   &--ghost {
-    padding: 16px 24px;
     background: transparent;
     color: white;
     border: 2px solid white;
-    border-radius: 4px;
-    font-size: 18px;
-    font-weight: 700;
 
     &:hover {
       background: white;
@@ -139,7 +135,6 @@ p {
     padding: 15px 20px;
     background: $color-blue;
     text-decoration: none;
-    font-weight: 700;
     border-radius: 0 0 6px 6px;
   }
 }

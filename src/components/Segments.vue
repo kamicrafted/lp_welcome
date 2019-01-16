@@ -1,18 +1,29 @@
 <template>
-  <div class="segments">
-    <div class="segments-item active">Top Channels</div>
-    <div class="segments-item">Live Sports</div>
-    <div class="segments-item">Popular Shows</div>
-    <div class="segments-item">On Demand Movies</div>
+<div class="segments">
+  <div v-for="(category, itemIndex) in categories"
+    class="segments-item"
+    :class="{'active': activeItemId === itemIndex}"
+    @click="setActiveItemId(itemIndex)"
+    v-bind:key="itemIndex">
+    {{category.name}}
   </div>
+</div>
 </template>
 
 <script>
 export default {
   name: 'segments',
+  props: ['carouselCategories'],
   data () {
     return {
-
+      activeItemId: 0,
+      categories: this.carouselCategories,
+    }
+  },
+  methods: {
+    setActiveItemId (itemIndex) {
+      this.activeItemId = itemIndex;
+      this.$emit('updatedIndex', this.carouselCategories[itemIndex]['name'])
     }
   }
 }
@@ -23,6 +34,30 @@ export default {
 
 .segments {
   display: flex;
+  @media only screen and (max-width: 710px) {
+    max-width: 90%;
+    text-align: center;
+  }
+
+  
+  &-item.active {
+      background: $color-blue;
+      border: 2px solid transparent;
+  }
+  &-item:first-child {
+    border-radius: 4px 0 0 4px;
+    margin-left: 0;
+  }
+
+  &-item:last-child {
+    border-radius: 0 4px 4px 0;
+  }
+
+  &-item:hover {
+    z-index: 10;
+    background: rgba($color-blue, .6);
+    border: 2px solid white;
+  }
 
   &-item {
     position: relative;
@@ -33,26 +68,16 @@ export default {
     margin-left: -2px;
     transition: all .15s $ease-out-quad;
     cursor: pointer;
-
-    &:first-child {
-      border-radius: 4px 0 0 4px;
-      margin-left: 0;
+    text-transform: uppercase;
+    @media only screen and (max-width: 1024px) {
     }
-
-    &:last-child {
-      border-radius: 0 4px 4px 0;
-    }
-
-    &:hover {
-      z-index: 10;
-      background: rgba($color-blue, .6);
-      border: 2px solid white;
-    }
-
-    &.active {
-      background: $color-blue;
-      border: 2px solid transparent;
+    @media only screen and (max-width: 710px) {
+      font-size: 11px;
     }
   }
+
+  
+ 
+ 
 }
 </style>
