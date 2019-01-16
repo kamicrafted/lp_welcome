@@ -3,21 +3,21 @@
     
     
     <div id="intro" class="section section--intro">
-      <transition name="fade">
+      <!-- <transition name="fade">
         <div class="scroll-hint" v-if="showScrollHint === true">
           <p>Scroll to explore features</p>
           <div class="icon-scroll">
 
           </div>
         </div>
-      </transition>
+      </transition> -->
 
       <div class="frame">
         <div class="message">
           <h1>Live TV & Sports</h1>
           <h2>Like you've never seen before</h2>
           <p>
-            No contracts. Plans starting at $39.99/mo. Cancel anytime.
+            No contracts. Plans starting at $39.99/mo. <span class="noWrap">Cancel anytime.</span>
           </p>
         </div>
 
@@ -124,7 +124,7 @@
       <div class="frame">
         <div class="message">
           <h1>
-            <span class="noWrap">More Premium Features For Free&nbsp;</span>
+            <span class="noWrap">More Premium Features For Free&nbsp;</span><br>
             <span class="noWrap">More Money In Your&nbsp;Pocket</span>
           </h1> 
           <p>Everything you love about cable, with none of the nonsense.</p>
@@ -1046,8 +1046,11 @@ export default {
 
   &--intro {
     min-height: auto;
-    padding-top: 120px;
+    padding-top: 80px;
     background-color: #14101D;
+    @media only screen and (max-width: 710px) {
+        padding-top: 95px;
+      }
 
     h1 {
       font-size: 62px;
@@ -1081,7 +1084,6 @@ export default {
        z-index: 500;
       transform: none;
       margin-top: 0px;
-      margin-bottom: 50px;
       bottom: 150px;
 
        @media only screen and (max-width: 1024px) {
