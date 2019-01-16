@@ -1042,7 +1042,7 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 85vh;
 
   &--intro {
     min-height: auto;
@@ -1092,7 +1092,6 @@ export default {
         }
         @media only screen and (max-width: 710px) {
           margin-top: 20px;
-          bottom: 40px
         }
 
       .check-channels {
@@ -1123,7 +1122,14 @@ export default {
       width: 180%;
       max-height: 250px;
       margin-top: -100px;
-      overflow: hidden;
+        @media only screen and (max-width: 1024px) {
+          width: 250%;
+          margin-top: -100px
+        }
+         @media only screen and (max-width: 710px) {
+          width: 350%;
+          margin-bottom: 0px;
+        }
 
       > img {
         display: block;
