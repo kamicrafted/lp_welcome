@@ -14,7 +14,7 @@
 
       <div class="frame">
         <div class="message" id="heroMessage">
-          <h1>Live TV & Sports</h1>
+          <h1>Live TV &amp; Sports</h1>
           <h2>Like you've never seen before</h2>
           <p>
             No contracts. Plans starting at $39.99/mo. <span class="noWrap">Cancel anytime.</span>
@@ -1253,6 +1253,7 @@ export default {
 
     h1 {
       font-size: 62px;
+      line-height: 1;
       margin-bottom: -16px;
 
       @media only screen and (max-width: 1024px) {

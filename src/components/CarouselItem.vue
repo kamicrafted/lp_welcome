@@ -4,7 +4,7 @@
       <img class="logo" :src="require('@/assets/' + tiledata.logo)" alt="">
     </div>
     <div class="thumbnail">
-      <img :src="tiledata.thumb + '?w=816&h=416&fit=fillmax&fill=solid&auto=format,compress'" alt="">
+      <img :src="tiledata.thumb + '?w=816&h=416&fit=fillmax&fill=solid&fill-color=302E38&auto=format,compress'" alt="">
     </div>
     <div class="info">
       <div class="record"></div>
