@@ -2,7 +2,7 @@
   <div class="apps">
     <div class="hero">
       <div class="message">
-        <h1>LIVE TV. ANYTIME, ANYWHERE.</h1>
+        <h1>LIVE TV. <br>ANYTIME, ANYWHERE.</h1>
         <p>Your favorite teams and shows on the go or on the couch.</p>
       </div>
     </div>
@@ -133,8 +133,29 @@
 import Footer from '../components/Footer'
 
 export default {
+  data () {
+    return {
+    }
+  },
   components: {
     Footer
+  },
+  methods: {
+    scrollHandler (e) {
+      if (window.scrollY > 50) {
+        this.$emit('header-mode', 'opaque')
+      } else {
+        this.$emit('header-mode', 'transparent')
+      }
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.scrollHandler)
+    // console.log('listening for scroll')
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.scrollHandler)
+    // console.log('stopped listening')
   }
 }
 </script>
@@ -146,10 +167,18 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 300px;
-  padding-top: 50px;
+  padding-top: 60px;
   text-align: center;
   background: $gradient-orange-purple;
+  padding-right: 5%;
+  padding-left: 5%;
+  min-height: 30vh;
+  @media only screen and (max-width: 1024px) {
+  }
+  @media only screen and (max-width: 710px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
 
 .section-label {
@@ -180,9 +209,9 @@ export default {
 }
 
 .device-group {
-  
     margin-bottom: 100px;
-  
+    padding-right: 5%;
+    padding-left: 5%;
 }
 
 .devices {
@@ -190,6 +219,13 @@ export default {
   justify-content: space-between;
   max-width: $site-max-width;
   margin: 0 auto;
+
+  @media only screen and (max-width: 1024px) {
+    flex-wrap: wrap;
+  }
+  @media only screen and (max-width: 710px) {
+    justify-content: center;
+  }
 }
 
 .device {
@@ -202,6 +238,14 @@ export default {
   margin-top: 100px;
   box-shadow: 0 8px 16px rgba(black, .3);
   transition: all .15s $ease-out-quad;
+
+  @media only screen and (max-width: 1024px) {
+    width: calc(50% - 40px);
+  }
+  @media only screen and (max-width: 710px) {
+    width: calc(100% - 40px);
+    padding-top: 30px;
+  }
 
   &:hover {
     box-shadow: 0 16px 32px rgba(black, .3);
@@ -256,6 +300,7 @@ export default {
     text-transform: uppercase;
     font-size: 24px;
     font-weight: 900;
+    padding: 0 5%;
 
     &.ios {
       text-transform: none;
@@ -270,6 +315,14 @@ export default {
     font-size: 48px;
     font-weight: 900;
     text-transform: uppercase;
+    @media only screen and (max-width: 1024px) {
+      font-size: 42px;
+      line-height: 52px;
+      font-weight: 800;
+    }
+    @media only screen and (max-width: 710px) {
+      padding-top: 120px;
+    }
   }
 
   h2 {

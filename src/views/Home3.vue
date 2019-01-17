@@ -13,7 +13,7 @@
       </transition> -->
 
       <div class="frame">
-        <div class="message">
+        <div class="message" id="heroMessage">
           <h1>Live TV & Sports</h1>
           <h2>Like you've never seen before</h2>
           <p>
@@ -31,7 +31,7 @@
             <img src="../assets/reflection.png" alt="">
           </div>
 
-          <div class="actions">
+          <div class="actions" id="heroAction">
             <button class="btn btn--ghost" v-scroll-to="'#zip'">Browse all available channels</button>
           </div>
         </div>
@@ -124,8 +124,7 @@
       <div class="frame">
         <div class="message">
           <h1>
-            <span class="noWrap">More Premium Features For Free&nbsp;</span><br>
-            <span class="noWrap">More Money In Your&nbsp;Pocket</span>
+            How is fubotV <span class="noWrap">better than cable&nbsp;TV?</span>
           </h1> 
           <p>Everything you love about cable, with none of the nonsense.</p>
         </div>
@@ -201,7 +200,7 @@
         </p>
 
         <div class="actions">
-        <a href="https://fubo.tv/signup" class="btn btn--cta-white">Start your free trial</a>
+        <a href="https://fubo.tv/signup" class="btn btn--cta-white">Start your free&nbsp;trial</a>
         </div>
       </div>
 
@@ -697,13 +696,157 @@ export default {
           name: 'Live Sports'
         },
         {
-          name: 'Popular Shows'
+          name: 'News'
         },
         {
           name: 'On Demand'
         }
       ],
       tiles: [
+        {
+          title: 'The Walking Dead',
+          subtitle: 'S9 • E8 - Evolution',
+          logo: 'livelogo/amc.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p8282918_b_h10_aw.jpg',
+          category: 'Top Channels'
+        },
+        { 
+          title: 'The Real Housewives of New Jersey',
+          subtitle: 'S9 • E13 - Camels, Cabo & Catfights',
+          // day: 'Tomorrow',
+          // time: '8:00PM',
+          logo: 'livelogo/bravo.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p302409_b_h8_am.jpg',
+          category: 'Top Channels'
+        },
+        { 
+          title: 'Big Bang Theory',
+          subtitle: 'S12 • E13 - The Confirmation Polarization',
+          // day: 'Tomorrow',
+          // time: '8:00PM',
+          logo: 'livelogo/cbs.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p185554_b_h8_az.jpg',
+          category: 'Top Channels On Demand'
+        },
+        { 
+          title: 'Anderson Cooper 360',
+          subtitle: '',
+          logo: 'livelogo/cnn.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p185440_b_h10_ad.jpg',
+          category: 'Top Channels News'
+        },
+        {
+          title: 'Keeping up with the Kardashians',
+          subtitle: 'S15 • E16 - Break Free',
+          logo: 'livelogo/e.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p185738_b_h8_bg.jpg',
+          category: 'Top Channels'
+        },
+        {
+          title: 'Diners, Drive-in and Dives',
+          subtitle: 'S30 • E30 - Piling on the Pork',
+          logo: 'livelogo/foodnetwork.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p185941_b_h8_aq.jpg',
+          category: 'Top Channels'
+        },
+        {
+          title: 'The Simpsons',
+          subtitle: 'S30 • E9 - Daddicus Finch',
+          logo: 'livelogo/fox.png',
+          thumb: 'https://fubotv-v3-dev-custom-assets.imgix.net/image_overrides/Simpsons_S30_1920x1080_1.jpg',
+          category: 'Popular Shows'
+        },
+        {
+          title: 'The Five',
+          logo: 'livelogo/foxnews.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p8743813_b_h8_af.jpg',
+          category: 'Top Channels News'
+        },
+        {
+          title: "It's Always Sunny in Philadelhia",
+          subtitle: 'S13 • E10 - Mac Finds His Pride',
+          logo: 'livelogo/fx.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p185171_b_h8_ak.jpg',
+          category: 'Top Channels On Demand'
+        },
+        {
+          title: 'Fixer Upper',
+          subtitle: 'S5 • E18 - Rock Star Renovation',
+          logo: 'livelogo/hgtv.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p9928145_b_h8_ag.jpg',
+          category: 'Top Channels'
+        },
+        {
+          title: 'American Pickers',
+          subtitle: 'S18 • E89 - The Great Pick Off',
+          logo: 'livelogo/history.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p7939201_b_h10_ae.jpg?',
+          category: 'Top Channels'
+        },
+        {
+          title: "Feherty",
+          subtitle: 'S8 • E15 - Jimmy Walker',
+          logo: 'livelogo/nbcgolf.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p8575315_b_h10_ac.jpg',
+          category: 'Top Channels Live Sports'
+        },
+        {
+          title: 'The Rachel Maddow Show',
+          logo: 'livelogo/msnbc.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p188599_b_h8_ac.jpg',
+          category: 'Top Channels News'
+        },
+        {
+          title: 'This is Us',
+          subtitle: 'S3 • E11 - Songbird Road: Part One',
+          logo: 'livelogo/nbc.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p12900252_b_h8_al.jpg',
+          category: 'Top Channels On Demand'
+        },
+        {
+          title: 'NFL Total Access',
+          subtitle: '',
+          logo: 'livelogo/nfl.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p267772_b_h10_ae.jpg',
+          category: 'Top Channels Live Sports'
+        },
+        {
+          title: 'Billions',
+          subtitle: 'S3 • E12 - Elmsley Count',
+          logo: 'livelogo/showtime.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p10639349_b_h10_ae.jpg',
+          category: 'Top Channels On Demand'
+        },
+        {
+          title: 'Full Frontal with Samantha Bee',
+          subtitle: 'S3 • E33',
+          logo: 'livelogo/tbs.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p12412201_b_h10_ab.jpg',
+          category: 'Top Channels'
+        },
+        {
+          title: 'Mysteries at the Museum',
+          subtitle: 'S17 • E39 - Cosmic Collision, Haunted Hotel and Van Gogh\'s Ear',
+          logo: 'livelogo/travel_channel.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p8237828_b_h8_bd.jpg',
+          category: 'Top Channels'
+        },
+         {
+          title: 'Inside the NBA',
+          logo: 'livelogo/tnt.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p248610_b_h10_ad.jpg',
+          category: 'Top Channels Live Sports'
+        },
+        {
+          title: 'Suits',
+          subtitle: 'S8 • E18 - Whale Hunt',
+          logo: 'livelogo/usa.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p8630071_b_h10_ax.jpg',
+          category: 'Top Channels'
+        },
+        
+      ],
+      oldTiles: [
         {
           title: 'The Walking Dead',
           subtitle: 'S9 • E8 - Evolution',
@@ -906,6 +1049,61 @@ export default {
       }
       // console.log('scrolling...' + window.scrollY)
     }, 
+    resizeHandler (e) {
+      var scrollTimeout;
+      var throttle = 250;
+      if (!scrollTimeout) {
+          scrollTimeout = setTimeout(function () {
+              setTimeout( function(){
+                  resizeHero(this)
+              }, 50);
+              scrollTimeout = null;
+          }, throttle);
+      }
+
+      function resizeHero(){
+          var topElement = document.getElementById('heroMessage'); // to adjust margin-top
+          var bottomElement = document.getElementById('heroAction'); // to adjust margin-bottom or                margin-bottom
+          topElement.style = "";
+          bottomElement.style = "";
+          if ( window.innerWidth >= 710 ) {
+            var innerHeight = window.innerHeight;
+          } else {
+            var innerHeight = bottomElement.getBoundingClientRect().top + 100;
+          }
+          var heroSection = document.querySelectorAll('.section--intro')[0];
+          var heroSectionSpecs = heroSection.getBoundingClientRect();
+
+          function updateCSS(element, addOrSubtract, styleAttr, pixels) {
+            if ( addOrSubtract === 'add' ) {
+              let oldMargin = element['style'][styleAttr] ? parseInt(element['style'][styleAttr].split('px')[0]) : 0;
+              let newMargin = oldMargin + pixels;
+              newMargin = newMargin + 'px';
+              element['style'][styleAttr] = newMargin;
+            } else {
+              let oldMargin = element['style'][styleAttr] ? parseInt(element['style'][styleAttr].split('px')[0]) : 0;
+              let newMargin = oldMargin - pixels;
+              newMargin = newMargin + 'px';
+              element['style'][styleAttr] = newMargin;
+            }
+          }
+
+          var heightDiff = innerHeight - heroSectionSpecs.height;
+
+          if ( heightDiff > 0 ) {
+              var pixelsToAdd = heightDiff;
+              updateCSS(topElement, 'add', 'marginTop', (pixelsToAdd * .5))
+              updateCSS(bottomElement, 'add', 'marginTop', (pixelsToAdd * .3))
+              updateCSS(bottomElement, 'add', 'marginBottom', (pixelsToAdd * .2))
+          } else if ( heightDiff < 0 ) {
+              var pixelsToRemove = heightDiff * -1
+              // updateCSS(topElement, 'subtract', 'marginTop', (pixelsToRemove * .1))
+              updateCSS(bottomElement, 'subtract', 'marginBottom', (pixelsToRemove))
+          }
+
+      }
+      
+    },
     forceRerender() {
       this.componentKey += 1;  
     },
@@ -914,8 +1112,8 @@ export default {
         this.showType = 'top channels'
       } else if ( e && e.toLowerCase() === 'live sports') {
         this.showType = 'live sports'
-      } else if ( e && e.toLowerCase() === 'popular shows') {
-        this.showType = 'popular shows'
+      } else if ( e && e.toLowerCase() === 'news') {
+        this.showType = 'news'
       } else if ( e && e.toLowerCase() === 'on demand') {
         this.showType = 'on demand'
       } else {
@@ -933,13 +1131,14 @@ export default {
             return false
           }
       });
-      console.log(filteredShowsArray);
       this.filteredShows = filteredShowsArray;
       return filteredShowsArray
     },
   },
   mounted () {
     window.addEventListener('scroll', this.scrollHandler)
+    window.addEventListener('resize', this.resizeHandler)
+    this.resizeHandler();
     this.carouselUpdater();
     // console.log('listening for scroll')
   },
@@ -1080,15 +1279,13 @@ export default {
       // bottom: 100px;
       // left: 50%;
       // transform: translate(-50%);
-       position: relative;
-       z-index: 500;
+      position: relative;
+      z-index: 500;
       transform: none;
       margin-top: 0px;
       bottom: 150px;
-
-       @media only screen and (max-width: 1024px) {
-          margin-top: 0px;
-          margin-bottom: 50px;
+        @media only screen and (max-width: 1024px) {
+            margin-top: 0px;
         }
         @media only screen and (max-width: 710px) {
           margin-top: 20px;
@@ -1126,9 +1323,9 @@ export default {
           width: 250%;
           margin-top: -100px
         }
-         @media only screen and (max-width: 710px) {
+        @media only screen and (max-width: 710px) {
+          margin-top: -100px;
           width: 350%;
-          margin-bottom: 0px;
         }
 
       > img {
@@ -1147,7 +1344,7 @@ export default {
     .tv {
       position: relative;
       margin: 0 auto;
-      max-width: 90vh;
+      max-width: 80vh;
       width: 90%;
 
       &:after {
@@ -1184,24 +1381,29 @@ export default {
     align-items: center;
     justify-content: center;
     background: $gradient-blue-purple-light;
+    padding: 50px 5%;
+     @media only screen and (max-width: 1024px) {
+        padding: 20px 0;
+      }
 
-    &:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-position: center center;
-      background-image: url('../assets/bg-benefits.jpg');
-      background-size: cover;
-      mix-blend-mode: overlay;
-      opacity: .3;
-    }
+    // &:after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   background-position: center center;
+    //   background-image: url('../assets/bg-benefits.jpg');
+    //   background-size: cover;
+    //   mix-blend-mode: overlay;
+    //   opacity: .3;
+    // }
 
     .message {
       @media only screen and (max-width: 710px) {
           margin-top: 30px;
+          padding: 0 5%;
       }
 
       p {
@@ -1224,13 +1426,8 @@ export default {
         }
         @media only screen and (max-width: 710px) {
           margin-top: 30px;
-          font-size: 20px;
-          line-height: 25px;
-        }
-        span.noWrap {
-          @media only screen and (max-width: 800px) {
-            display: inline;
-          }
+          font-size: 36px;
+          line-height: 38px;
         }
       }
 
@@ -1303,7 +1500,7 @@ export default {
     }
 
     .actions {
-      margin: 50px auto;
+      margin: 30px auto 50px auto;
     }
 
     .icon-box {
@@ -1336,19 +1533,19 @@ export default {
     background: $gradient-blue-purple-dark;
     overflow: hidden;
 
-    &:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-position: center center;
-      background-size: cover;
-      background-image: url('../assets/bg-live-shows.jpg');
-      mix-blend-mode: multiply;
-      opacity: .8;
-    }
+    // &:after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   background-position: center center;
+    //   background-size: cover;
+    //   background-image: url('../assets/bg-live-shows.jpg');
+    //   mix-blend-mode: multiply;
+    //   opacity: .8;
+    // }
 
     .message,
     .segments,
@@ -1375,6 +1572,7 @@ export default {
       position: relative;
       z-index: 10;
       margin-top: 15px;
+      margin-bottom: 50px;
     }
   }
 
@@ -1395,7 +1593,8 @@ export default {
     .message {
       text-align: left;
       @media only screen and (max-width: 1024px) {
-        width: 25%;
+        width: 33%;
+        padding-top: 30px;
       }
       @media only screen and (max-width: 710px) {
         width: 100%;
@@ -1404,7 +1603,7 @@ export default {
       }
       
       .actions {
-        margin: 30px auto;
+        margin: 30px auto 70px auto;
       }
       
     }
@@ -1412,10 +1611,15 @@ export default {
     .visual {
       position: relative;
       right: -10%;
-      max-width: 1600px;
+      max-width: 1200px;
+      margin-top: 50px;
+      margin-bottom: 50px;
         @media only screen and (max-width: 1024px) {
-          width: 75%;
-          right: -20%;
+          width: 66%;
+          right: -18%;
+          padding-top: 50px;
+          margin-top: 0px;
+          margin-bottom: 0px;
         }
         @media only screen and (max-width: 710px) {
           display: block;
@@ -1805,6 +2009,17 @@ export default {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding-top: 50px;
+      @media only screen and (max-width: 1024px) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+      } 
+      @media only screen and (max-width: 710px) {
+        padding-top: 0px;
+        padding-bottom: 30px;
+      } 
+
 
     h1 {
       margin-bottom: 50px;
