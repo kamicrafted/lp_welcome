@@ -224,7 +224,7 @@ export default {
     flex-wrap: wrap;
   }
   @media only screen and (max-width: 710px) {
-  
+    justify-content: center;
   }
 }
 
@@ -244,6 +244,7 @@ export default {
   }
   @media only screen and (max-width: 710px) {
     width: calc(100% - 40px);
+    padding-top: 30px;
   }
 
   &:hover {

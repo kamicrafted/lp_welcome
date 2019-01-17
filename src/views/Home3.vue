@@ -1052,7 +1052,6 @@ export default {
     resizeHandler (e) {
       var scrollTimeout;
       var throttle = 250;
-      var lastScrollTop = 0;
       if (!scrollTimeout) {
           scrollTimeout = setTimeout(function () {
               setTimeout( function(){
@@ -1076,7 +1075,6 @@ export default {
           var heroSectionSpecs = heroSection.getBoundingClientRect();
 
           function updateCSS(element, addOrSubtract, styleAttr, pixels) {
-            var original
             if ( addOrSubtract === 'add' ) {
               let oldMargin = element['style'][styleAttr] ? parseInt(element['style'][styleAttr].split('px')[0]) : 0;
               let newMargin = oldMargin + pixels;
@@ -1383,6 +1381,10 @@ export default {
     align-items: center;
     justify-content: center;
     background: $gradient-blue-purple-light;
+    padding: 50px 5%;
+     @media only screen and (max-width: 1024px) {
+        padding: 20px 0;
+      }
 
     // &:after {
     //   content: '';
@@ -1498,7 +1500,7 @@ export default {
     }
 
     .actions {
-      margin: 50px auto;
+      margin: 30px auto 50px auto;
     }
 
     .icon-box {
@@ -1610,10 +1612,14 @@ export default {
       position: relative;
       right: -10%;
       max-width: 1200px;
+      margin-top: 50px;
+      margin-bottom: 50px;
         @media only screen and (max-width: 1024px) {
           width: 66%;
           right: -18%;
           padding-top: 50px;
+          margin-top: 0px;
+          margin-bottom: 0px;
         }
         @media only screen and (max-width: 710px) {
           display: block;
