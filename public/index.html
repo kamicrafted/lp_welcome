@@ -34,12 +34,72 @@
     <link rel="icon" type="image/png" href="https://www.fubo.tv/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://www.fubo.tv/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="https://www.fubo.tv/favicon-128.png" sizes="128x128">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-N3FQ7TG');</script>
+  <!-- End Google Tag Manager -->
+
   </head>
   <body>
     <noscript>
       <strong>We're sorry but this site doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N3FQ7TG"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div id="app"></div>
     <!-- built files will be auto injected -->
+
+    <script>
+
+    function getURLParameter(sParam) {
+        var sPageURL = window.location.search.substring(1);
+        var sURLVariables = sPageURL.split('&');
+        for (var i = 0; i < sURLVariables.length; i++) {
+            var sParameterName = sURLVariables[i].split('=');
+            if (sParameterName[0] == sParam || sParameterName[0] == encodeURIComponent(sParam)) {
+                return sParameterName[1];
+            }
+        }
+    }
+
+    var ftv_campaign = getURLParameter('ftv_campaign');
+
+
+    // load amplitude iframe
+    // Javascript to trigger Amplitude Track event
+    // Calls and embeds track.html iframe into the page
+    var valueOrEmpty = function(value) {
+        return value ? value : '';
+    }
+
+    var analyticsProps = {
+        'app_name': 'page-view-tracker',
+        'app_version': '1.0.0',
+        'device_category': 'web',
+        'event_category': 'user_action',
+        'event_metadata.referrer': valueOrEmpty(document.referrer),
+        'event_metadata.url': valueOrEmpty(window.location.href),
+        'event_metadata.domain': valueOrEmpty(window.location.hostname),
+        'ftv_campaign': ftv_campaign
+    }
+
+    var flattenedProps = encodeURIComponent(JSON.stringify(analyticsProps));
+    var iframe = document.createElement('iframe');
+    iframe.style.display = "none";
+    var srcUrl = "https://widget.fubo.tv/track.html?";
+    srcUrl += "eventName=page_view";
+    srcUrl += "&eventProperties=" + flattenedProps;
+    srcUrl += "&amplitudeId=627bfe7582c1d63e872b474eec401069";
+    iframe.src = srcUrl;
+    document.getElementsByTagName('head')[0].append(iframe);
+    
+    </script>
   </body>
 </html>

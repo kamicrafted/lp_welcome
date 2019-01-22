@@ -12,27 +12,27 @@
         </div>
       </transition> -->
 
-      <div class="frame">
+      <div class="frame" id="heroFrame">
         <div class="message" id="heroMessage">
-          <h1>Live TV &amp; Sports</h1>
-          <h2>Like you've never seen before</h2>
+          <h1>Goodbye Cable TV</h1>
+          <h2>Hello live sports &amp; TV with&nbsp;fuboTV</h2>
           <p>
-            No contracts. Plans starting at $39.99/mo. <span class="noWrap">Cancel anytime.</span>
+            No contract. No hidden fees. <span class="noWrap">Only $44.99/mo.</span>
           </p>
         </div>
 
         <div class="visual">
-          <div class="tv">
+          <div class="tv" id="heroTV">
             <video class="video" src="../assets/video2.mp4" playsinline loop muted autoplay></video>
             <img class="device" src="../assets/tv.png" alt="">
           </div>
 
-          <div class="reflection">
+          <div class="reflection" id="heroReflection">
             <img src="../assets/reflection.png" alt="">
           </div>
 
           <div class="actions" id="heroAction">
-            <button class="btn btn--ghost" v-scroll-to="'#zip'">Browse all available channels</button>
+            <button class="btn btn--ghost" v-scroll-to="'#zip'">See your channel lineup</button>
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@
       <div class="message">
         <h1>
           109 channels
-          <span>are available in the</span>
+          <span>available in the</span>
           <span class="noWrap">New York Area</span>
         </h1>
 
@@ -52,23 +52,22 @@
         </div> -->
 
         <a href="https://fubo.tv/signup" class="btn btn--cta-white">Start your free trial</a>
+        <h4 class="subCTA"> No contract. Cancel any time.</h4>
       </div>
 
       <div class="options">
         <div class="option">
           <div class="header">
-            <h3>fubo<span> - <span class="noWrap">90 channels</span></span></h3>
+            <h3>fubo&nbsp;<span> <span class="hideMob">&nbsp;&nbsp;|&nbsp;&nbsp;</span> <span class="noWrap">90 channels</span></span></h3>
 
             <div class="detail">
               <div class="price">
                 <span class="currency">$</span>
-                <div class="dollars">39</div>
+                <div class="dollars">44</div>
                 <div class="cents">99</div>
               </div>
               <div class="first-month">
-                for first month
-                <br>
-                <em>($44.99 after)</em>
+                per month
               </div>
             </div>
           </div>
@@ -82,30 +81,76 @@
 
         <div class="option">
           <div class="header">
-            <h3>fubo Extra<span> - <span class="noWrap">109 Channels&nbsp;</span> <span>(fubo + 19 more)</span></span></h3>
+            <h3>fubo Extra&nbsp;<span> <span class="hideMob">&nbsp;&nbsp;|&nbsp;&nbsp;</span> <span class="noWrap">109 channels&nbsp;</span> </span></h3>
 
             <div class="detail">
               <div class="price">
                 <span class="currency">$</span>
-                <div class="dollars">44</div>
+                <div class="dollars">49</div>
                 <div class="cents">99</div>
               </div>
               <div class="first-month">
-                for first month
-                <br>
-                <em>($44.99 after)</em>
+               per month
+                
               </div>
             </div>
           </div>
 
           <div class="grid">
+            <div class="item fuboextra text">
+              <span>All channels above&nbsp;plus&hellip;</span>
+            </div>
             <div class="item" v-for="channel in fuboPlusNY" v-bind:key="channel.name">
               <img class="logo" :src="channel.logoSrc" :alt="channel.name" :title="channel.name">
             </div>
           </div>
         </div>
 
-        <div class="option option--premium">
+        <div class="option">
+          <div class="header">
+            <h3>Add-ons</h3>
+
+            <div class="detail">
+              <!-- text here -->
+            </div>
+          </div>
+          <div class="addOnContain">
+            <div class="addOnChannels">
+              <h3>Channels</h3>
+              <p>Customize your channel lineup with the sports &amp; TV you love.</p>
+              <div class="logoContain">
+                <div class="logos">
+                  <div class="item" v-for="channel in addOnChannels" v-bind:key="channel.name">
+                      <img class="logo" :src="channel.logoSrc" :alt="channel.name" :title="channel.name">
+                  </div>
+                </div>
+              </div>     
+            </div>
+            <div class="addOnFeatures">
+              <h3>Features</h3>
+              <p>Let more people stream and record fuboTV at the same time.</p>
+              <div class="featuresContain">
+                <div class="featureBox">
+                  <div class="logo">
+                      <img   src="https://fubotv-v3-dev-custom-assets.imgix.net/image_overrides/icon-cloud-dvr-plus.png?w=100&ch=Width&auto=format,compress" alt="DVR Plus" title="DVR Plus">
+                  </div>
+                  <h2 class="text">
+                    Cloud DVR Plus
+                  </h2>
+                </div>
+                <div class="featureBox">
+                  <div class="logo">
+                      <img  src="https://fubotv-v3-dev-custom-assets.imgix.net/image_overrides/icon-family-share.png?w=100&ch=Width&auto=format,compress" alt="DVR Plus" title="DVR Plus">
+                  </div>
+                  <h2 class="text">Family Share</h2>
+                </div>
+              </div>
+                
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="option option--premium">
           <div class="headlineContain">
             <h3>Add-on channels</h3>
           </div>
@@ -116,7 +161,7 @@
               </div>
             </div>
           </div>           
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -126,7 +171,7 @@
           <h1>
             How is fubotV <span class="noWrap">better than cable&nbsp;TV?</span>
           </h1> 
-          <p>Everything you love about cable, with none of the nonsense.</p>
+         
         </div>
 
         <div class="features">
@@ -135,21 +180,21 @@
               <img src="../assets/icon-save.svg" alt="">
             </div>
             <div class="copy-box">
-              <h3>Unbelievable savings</h3>
+              <h3>Big savings</h3>
               <p>
-                No long term contracts. No hidden fees. Save money over cable while keeping your favorite live sports, news and shows.
+                fuboTV has the live sports and TV you love for half the cost of similar cable packages.
               </p>
             </div>
           </div>
 
           <div class="features-item">
             <div class="icon-box">
-              <img src="../assets/icon-4k.svg" alt="">
+              <img src="../assets/icon-nocontract.png" alt="">
             </div>
             <div class="copy-box">
-              <h3>Leader in <strong>4K Live TV</strong></h3>
+              <h3>No contracts, <span class="noWrap">no hidden fees</span></h3>
               <p>
-                The first streaming service with live 4K games from <strong>College Football</strong>, <strong>English Premier League</strong> and <strong>Major League Baseball</strong>.
+                What you see is what you pay. Want to cancel or take a break? No problem. 
               </p>
             </div>
           </div>
@@ -161,7 +206,7 @@
             <div class="copy-box">
               <h3>Cloud DVR included free</h3>
               <p>
-                Get 30 hours of Cloud DVR space for free. Record what you love and watch from anywhere.
+                Get 30 hours free. Record what you want and watch it on all your devices. 
               </p>
             </div>
           </div>
@@ -170,14 +215,15 @@
         <div class="actions">
           <a href="https://fubo.tv/signup" class="btn btn--cta-white">Start your free trial</a>
         </div>
+        <h4 class="subCTA"> No contract. Cancel any time.</h4>
       </div>
     </div>
 
     <div id="livenow" class="section section--livenow">
       <div class="message">
-        <h1>WATCH NOW <span class="noWrap">ON FUBO<sup>TV</sup></span></h1>
+        <h1>Start Watching Now</h1>
         <p>
-          The perfect mix of sports and entertainment. Live and on demand.
+          Sports and TV. Movies and news. Live and on demand. We have it all.
         </p>
       </div>
       
@@ -186,21 +232,26 @@
         <Carousel v-bind:filteredTiles="filteredShows" :key="componentKey" />
 
       <a href="https://fubo.tv/signup" class="btn btn--cta-white">Start your free trial</a>
+        <h4 class="subCTA"> No contract. Cancel any time.</h4>
     </div>
 
     <div id="devices" class="section section--devices">
       <div class="message">
-        <h1>
-          LIVE TV. <span class="hideMob"><br></span>
-          WHEREVER, <span class="hideMob"><br></span>
-          WHENEVER.
+        <h1>YOUR&nbsp;SCREENS. <span class="hideMob"><br></span>YOUR&nbsp;TERMS. 
+          
         </h1>
         <p>
-          Enjoy your favorite teams and shows on all of your screens.
+          Download the free fuboTV apps for all your devices. Watch what you want, when you want.
         </p>
+        <div class="deviceIcons">
+          <img src="../assets/devices1.png">
+          <img src="../assets/devices2.png">
+        </div>
 
         <div class="actions">
         <a href="https://fubo.tv/signup" class="btn btn--cta-white">Start your free&nbsp;trial</a>
+        <h4 class="subCTA"> No contract. Cancel any time.</h4>
+
         </div>
       </div>
 
@@ -222,13 +273,10 @@
           -PC Magazine, 2018
         </p>
 
-        <button class="btn btn--cta" v-scroll-to="'#zip'">Start your free trial</button>
+        <button href="https://fubo.tv/signup" class="btn btn--cta">Start your free trial</button>
+        <h4 class="subCTA"> No contract. Cancel any time.</h4>
 
-        <p class="details">
-          No contracts. Plans starting at $39.99/mo.
-          <br>
-          Cancel anytime.
-        </p>
+        
       </div>
     </div>
 
@@ -255,7 +303,7 @@
         </div>
 
         <div class="question question--record">
-          <h3>Can I record games & shows?</h3>
+          <h3>Can I record games &amp; shows?</h3>
           <p>
             Yes, every fuboTV account includes 30 hours of Cloud DVR space at no extra charge so you can record your favorite programs. You can hit record from one device, then start watching on another, and finish in another.
           </p>
@@ -264,7 +312,7 @@
         <div class="question question--contract">
           <h3>Do I have to sign a contract? How can I cancel?</h3>
           <p>
-            Unlike Cable, fuboTV does not have contracts. You can cancel anytime. There are no fees for cancelling or equipment to return as fuboTV is streamed through the internet.
+            Unlike cable, fuboTV does not have contracts. You can cancel anytime. There are no fees for cancelling or equipment to return as fuboTV is streamed through the internet.
           </p>
         </div>
 
@@ -686,6 +734,9 @@ export default {
         },
         { name: 'AMC Premiere',
           logoSrc: imgixChannelLogosRoute + 'amc-premiere_m.png' + imgixChannelLogoParams
+        },
+        { name: 'FX+',
+          logoSrc: imgixChannelLogosRoute + 'FXPlus_m.png' + imgixChannelLogoParams 
         }
       ],
       carouselCategories: [
@@ -703,6 +754,110 @@ export default {
         }
       ],
       tiles: [
+        { 
+          title: 'The Big Bang Theory',
+          subtitle: 'S12 • E13 - The Confirmation Polarization',
+          // day: 'Tomorrow',
+          // time: '8:00PM',
+          logo: 'livelogo/cbs.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p185554_b_h8_az.jpg',
+          category: 'Top Channels On Demand'
+        },
+        {
+          title: 'The Simpsons',
+          subtitle: 'S30 • E9 - Daddicus Finch',
+          logo: 'livelogo/fox.png',
+          thumb: 'https://fubotv-v3-dev-custom-assets.imgix.net/image_overrides/Simpsons_S30_1920x1080_1.jpg',
+          category: 'Popular Shows'
+        },
+        {
+          title: 'This is Us',
+          subtitle: 'S3 • E11 - Songbird Road: Part One',
+          logo: 'livelogo/nbc.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p12900252_b_h8_al.jpg',
+          category: 'Top Channels On Demand'
+        },
+         {
+          title: 'Inside the NBA',
+          logo: 'livelogo/tnt.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p248610_b_h10_ad.jpg',
+          category: 'Top Channels Live Sports'
+        },
+        {
+          title: 'Full Frontal with Samantha Bee',
+          subtitle: 'S3 • E33',
+          logo: 'livelogo/tbs.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p12412201_b_h10_ab.jpg',
+          category: 'Top Channels'
+        },
+        {
+          title: 'LaLiga News',
+          subtitle: '',
+          logo: 'livelogo/bein.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p13423044_b_h8_ab.jpg',
+          category: 'Top Channels Live Sports'
+        },
+        {
+          title: 'NFL Total Access',
+          subtitle: '',
+          logo: 'livelogo/nfl.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p267772_b_h10_ae.jpg',
+          category: 'Top Channels Live Sports'
+        },
+        {
+          title: 'The Starters',
+          subtitle: '',
+          logo: 'livelogo/nbatv.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p10271133_b_h8_af.jpg',
+          category: 'Top Channels Live Sports'
+        },
+        { 
+          title: 'Anderson Cooper 360',
+          subtitle: '',
+          logo: 'livelogo/cnn.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p185440_b_h10_ad.jpg',
+          category: 'Top Channels News'
+        },
+        {
+          title: 'The Five',
+          logo: 'livelogo/foxnews.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p8743813_b_h8_af.jpg',
+          category: 'Top Channels News'
+        },
+        {
+          title: 'The Rachel Maddow Show',
+          logo: 'livelogo/msnbc.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p188599_b_h8_ac.jpg',
+          category: 'Top Channels News'
+        },
+        {
+          title: 'Billions',
+          subtitle: 'S3 • E12 - Elmsley Count',
+          logo: 'livelogo/showtime.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p10639349_b_h10_ae.jpg',
+          category: 'Top Channels On Demand'
+        },
+        {
+          title: 'Fixer Upper',
+          subtitle: 'S5 • E18 - Rock Star Renovation',
+          logo: 'livelogo/hgtv.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p9928145_b_h8_ag.jpg',
+          category: 'Top Channels'
+        },
+        {
+          title: 'Diners, Drive-ins and Dives',
+          subtitle: 'S30 • E30 - Piling on the Pork',
+          logo: 'livelogo/foodnetwork.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p185941_b_h8_aq.jpg',
+          category: 'Top Channels'
+        },
+        {
+          title: 'Live P.D.',
+          subtitle: '',
+          logo: 'livelogo/ae.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p13357824_b_h8_an.jpg?',
+          category: 'Top Channels'
+        },
         {
           title: 'The Walking Dead',
           subtitle: 'S9 • E8 - Evolution',
@@ -719,22 +874,6 @@ export default {
           thumb: 'https://fubotv-v3-dev.imgix.net/assets/p302409_b_h8_am.jpg',
           category: 'Top Channels'
         },
-        { 
-          title: 'Big Bang Theory',
-          subtitle: 'S12 • E13 - The Confirmation Polarization',
-          // day: 'Tomorrow',
-          // time: '8:00PM',
-          logo: 'livelogo/cbs.png',
-          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p185554_b_h8_az.jpg',
-          category: 'Top Channels On Demand'
-        },
-        { 
-          title: 'Anderson Cooper 360',
-          subtitle: '',
-          logo: 'livelogo/cnn.png',
-          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p185440_b_h10_ad.jpg',
-          category: 'Top Channels News'
-        },
         {
           title: 'Keeping up with the Kardashians',
           subtitle: 'S15 • E16 - Break Free',
@@ -743,37 +882,17 @@ export default {
           category: 'Top Channels'
         },
         {
-          title: 'Diners, Drive-in and Dives',
-          subtitle: 'S30 • E30 - Piling on the Pork',
-          logo: 'livelogo/foodnetwork.png',
-          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p185941_b_h8_aq.jpg',
-          category: 'Top Channels'
-        },
-        {
-          title: 'The Simpsons',
-          subtitle: 'S30 • E9 - Daddicus Finch',
-          logo: 'livelogo/fox.png',
-          thumb: 'https://fubotv-v3-dev-custom-assets.imgix.net/image_overrides/Simpsons_S30_1920x1080_1.jpg',
-          category: 'Popular Shows'
-        },
-        {
-          title: 'The Five',
-          logo: 'livelogo/foxnews.png',
-          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p8743813_b_h8_af.jpg',
-          category: 'Top Channels News'
-        },
-        {
-          title: "It's Always Sunny in Philadelhia",
+          title: "It's Always Sunny in Philadelphia",
           subtitle: 'S13 • E10 - Mac Finds His Pride',
           logo: 'livelogo/fx.png',
           thumb: 'https://fubotv-v3-dev.imgix.net/assets/p185171_b_h8_ak.jpg',
           category: 'Top Channels On Demand'
         },
         {
-          title: 'Fixer Upper',
-          subtitle: 'S5 • E18 - Rock Star Renovation',
-          logo: 'livelogo/hgtv.png',
-          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p9928145_b_h8_ag.jpg',
+          title: 'Modern Family',
+          subtitle: 'S7 • E22 - Double-Click',
+          logo: 'livelogo/usa.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p3560360_b_h8_nu.jpg',
           category: 'Top Channels'
         },
         {
@@ -791,51 +910,11 @@ export default {
           category: 'Top Channels Live Sports'
         },
         {
-          title: 'The Rachel Maddow Show',
-          logo: 'livelogo/msnbc.png',
-          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p188599_b_h8_ac.jpg',
-          category: 'Top Channels News'
-        },
-        {
-          title: 'This is Us',
-          subtitle: 'S3 • E11 - Songbird Road: Part One',
-          logo: 'livelogo/nbc.png',
-          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p12900252_b_h8_al.jpg',
-          category: 'Top Channels On Demand'
-        },
-        {
-          title: 'NFL Total Access',
-          subtitle: '',
-          logo: 'livelogo/nfl.png',
-          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p267772_b_h10_ae.jpg',
-          category: 'Top Channels Live Sports'
-        },
-        {
-          title: 'Billions',
-          subtitle: 'S3 • E12 - Elmsley Count',
-          logo: 'livelogo/showtime.png',
-          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p10639349_b_h10_ae.jpg',
-          category: 'Top Channels On Demand'
-        },
-        {
-          title: 'Full Frontal with Samantha Bee',
-          subtitle: 'S3 • E33',
-          logo: 'livelogo/tbs.png',
-          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p12412201_b_h10_ab.jpg',
-          category: 'Top Channels'
-        },
-        {
           title: 'Mysteries at the Museum',
           subtitle: 'S17 • E39 - Cosmic Collision, Haunted Hotel and Van Gogh\'s Ear',
           logo: 'livelogo/travel_channel.png',
           thumb: 'https://fubotv-v3-dev.imgix.net/assets/p8237828_b_h8_bd.jpg',
           category: 'Top Channels'
-        },
-         {
-          title: 'Inside the NBA',
-          logo: 'livelogo/tnt.png',
-          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p248610_b_h10_ad.jpg',
-          category: 'Top Channels Live Sports'
         },
         {
           title: 'Suits',
@@ -845,190 +924,6 @@ export default {
           category: 'Top Channels'
         },
         
-      ],
-      oldTiles: [
-        {
-          title: 'The Walking Dead',
-          subtitle: 'S9 • E8 - Evolution',
-          day: 'Today',
-          time: '8:00PM',
-          logo: 'livelogo/amc.png',
-          thumb: 'livethumb/amc.jpg',
-          category: 'Popular Shows'
-        },
-        {
-          title: 'The Real Housewives of Dallas',
-          subtitle: 'S3 • E18 - Reunion Part 2',
-          day: 'Tomorrow',
-          time: '8:00PM',
-          logo: 'livelogo/bravo.png',
-          thumb: 'livethumb/bravo.jpg',
-          category: 'Popular Shows'
-        },
-        {
-          title: 'Riverdale',
-          subtitle: 'S3 • E7 - Chapter Forty-Two: The Man in Black',
-          day: 'Today',
-          time: '8:00PM',
-          logo: 'livelogo/cw.png',
-          thumb: 'livethumb/cw.jpg',
-          category: 'Popular Shows'
-        },
-        {
-          title: 'Keeping up with the Kardashians',
-          subtitle: 'S15 • E16 - Break Free',
-          day: 'Today',
-          time: '8:00PM',
-          logo: 'livelogo/e.png',
-          thumb: 'livethumb/e.jpg',
-          category: 'Popular Shows'
-        },
-        {
-          title: 'So You Think You Can Dance',
-          subtitle: 'S15 • E14 - Finale',
-          day: 'Tomorrow',
-          time: '8:00PM',
-          logo: 'livelogo/fox.png',
-          thumb: 'livethumb/fox.jpg',
-          category: 'Popular Shows'
-        },
-        {
-          title: 'The Five',
-          subtitle: '',
-          day: 'FRI',
-          time: '8:00PM',
-          logo: 'livelogo/foxnews.png',
-          thumb: 'livethumb/foxnews.jpg',
-          category: 'Top Channels'
-        },
-        {
-          title: 'Mayans',
-          subtitle: "S1 • E10 - Cuervo/Tz'ikb'uul",
-          day: 'FRI',
-          time: '8:00PM',
-          logo: 'livelogo/fx.png',
-          thumb: 'livethumb/fx.jpg',
-          category: 'Popular Shows'
-        },
-        {
-          title: 'Fixer Upper',
-          subtitle: 'S5 • E18 - Rock Star Renovation',
-          day: 'Today',
-          time: '8:00PM',
-          logo: 'livelogo/hgtv.png',
-          thumb: 'livethumb/hgtv.jpg',
-          category: 'Popular Shows'
-        },
-        {
-          title: 'Pawn Stars',
-          subtitle: 'S15 • E29 - The Pistol Is Mightier Than the Sword',
-          day: 'SUN',
-          time: '8:00PM',
-          logo: 'livelogo/history.png',
-          thumb: 'livethumb/history.jpg',
-          category: 'Top Channels'
-
-        },
-        {
-          title: 'Portlandia',
-          subtitle: 'S8 • E6 - You Do You',
-          day: 'TUE',
-          time: '8:00PM',
-          logo: 'livelogo/ifc.png',
-          thumb: 'livethumb/ifc.jpg',
-          category: 'Top Channels'
-
-        },
-        {
-          title: 'The Journey: Canelo Vs. Rocky',
-          subtitle: '',
-          day: 'SAT',
-          time: '8:00PM',
-          logo: 'livelogo/msg.png',
-          thumb: 'livethumb/msg.jpg',
-          category: 'Popular Shows'
-        },
-        {
-          title: 'Animal Fight Night',
-          subtitle: 'S6 • E12 - No Way Out',
-          day: 'Today',
-          time: '8:00PM',
-          logo: 'livelogo/natgeo.png',
-          thumb: 'livethumb/natgeo.jpg',
-          category: 'Top Channels'
-        },
-        {
-          title: "'86 Jack's 6th Green Jacket",
-          subtitle: '',
-          day: 'Tomorrow',
-          time: '8:00PM',
-          logo: 'livelogo/nbcgolf.png',
-          thumb: 'livethumb/nbcgolf.jpg',
-          category: 'Live Sports'
-        },
-        {
-          title: 'Gameday Live',
-          subtitle: '',
-          day: 'MON',
-          time: '8:00PM',
-          logo: 'livelogo/nfl.png',
-          thumb: 'livethumb/nfl.jpg',
-          category: 'Live Sports'
-        },
-        {
-          title: 'Billions',
-          subtitle: 'S3 • E12 - Elmsley Count',
-          day: 'SAT',
-          time: '8:00PM',
-          logo: 'livelogo/showtime.png',
-          thumb: 'livethumb/showtime.jpg'
-        },
-        {
-          title: 'M.A.S.H.',
-          subtitle: 'S10 • E20 - Sons and Bowlers',
-          day: 'THU',
-          time: '8:00PM',
-          logo: 'livelogo/sundance.png',
-          thumb: 'livethumb/sundance.jpg',
-          category: 'Popular Shows'
-        },
-        {
-          title: 'Happy!',
-          subtitle: 'S1 • E8 - I Am the Future',
-          day: 'Tomorrow',
-          time: '8:00PM',
-          logo: 'livelogo/syfy.png',
-          thumb: 'livethumb/syfy.jpg',
-          category: 'Top Channels'
-
-        },
-        {
-          title: 'NCIS: New Orleans',
-          subtitle: 'S5 • E10 - Tick Tock',
-          day: 'TUE',
-          time: '8:00PM',
-          logo: 'livelogo/tnt.png',
-          thumb: 'livethumb/tnt.jpg',
-          category: 'Popular Shows'
-        },
-        {
-          title: 'The Sinner',
-          subtitle: 'S2 • E3 - Part III',
-          day: 'WED',
-          time: '8:00PM',
-          logo: 'livelogo/usa.png',
-          thumb: 'livethumb/usa.jpg',
-          category: 'Popular Shows'
-        },
-        {
-          title: "It's Always Sunny in Philadelhia",
-          subtitle: 'S13 • E10 - Mac Finds His Pride',
-          day: 'FRI',
-          time: '8:00PM',
-          logo: 'livelogo/viceland.png',
-          thumb: 'livethumb/viceland.jpg',
-          category: 'Popular Shows'
-        },
       ],
     }
   },
@@ -1040,6 +935,10 @@ export default {
   methods: {
     // eslint-disable-next-line
     scrollHandler (e) {
+      window.recentScroll = true;
+      setTimeout(function(){
+        window.recentScroll = false;
+      }, 1500)
       if (window.scrollY > 50) {
         this.showScrollHint = false
         this.$emit('header-mode', 'opaque')
@@ -1062,17 +961,75 @@ export default {
       }
 
       function resizeHero(){
-          var topElement = document.getElementById('heroMessage'); // to adjust margin-top
-          var bottomElement = document.getElementById('heroAction'); // to adjust margin-bottom or                margin-bottom
+          var topElement = document.getElementById('heroFrame'); // to adjust margin-top
+          var middleElement = document.getElementById('heroTV'); // to adjust max-width
+          var bottomSpacer = document.getElementById('heroReflection') // to adjust height
+          var bottomElement = document.getElementById('heroAction'); // to adjust margin-bottom or                margin-top
+
           topElement.style = "";
+          middleElement.style = "";
           bottomElement.style = "";
-          if ( window.innerWidth >= 710 ) {
-            var innerHeight = window.innerHeight;
-          } else {
-            var innerHeight = bottomElement.getBoundingClientRect().top + 100;
+          bottomSpacer.style = "";
+          var channelCount= document.querySelectorAll('#zip div.message h1')[0]; //
+
+          function sectionTwoPixelsAboveFold() {
+            let innerHeight = window.innerHeight;
+            let sectionTwo = channelCount.getBoundingClientRect().bottom
+            return innerHeight - sectionTwo
           }
-          var heroSection = document.querySelectorAll('.section--intro')[0];
-          var heroSectionSpecs = heroSection.getBoundingClientRect();
+
+          function tightenMiddleBottom(pixelsToRemove){
+            let spaceBetween = bottomElement.getBoundingClientRect().top - middleElement.getBoundingClientRect().bottom
+            pixelsToRemove = pixelsToRemove * -1
+            let maxReduction = spaceBetween + 10
+            if (pixelsToRemove > maxReduction) {
+              if ( middleElement.getBoundingClientRect().width > 500 ) {
+                console.log(middleElement.getBoundingClientRect().width);
+                middleElement.style.width = middleElement.getBoundingClientRect().width - (pixelsToRemove - maxReduction) + 'px';
+                  middleElement.style.maxWidth = '90%';
+                bottomSpacer.style.height = bottomSpacer.getBoundingClientRect().height - maxReduction * .9 + 'px';
+              }
+            } else {
+              bottomSpacer.style.height = bottomSpacer.getBoundingClientRect().height - pixelsToRemove + 'px';
+            }
+          }
+          
+
+          // function centerButton() {
+          //   let space = bottomElement.getBoundingClientRect().top - middleElement.getBoundingClientRect().bottom;
+          //   if (space > 0) {
+          //     bottomElement.style.marginBottom = (space * .7) + 'px'
+          //     bottomElement.style.marginTop = ( space * -1 ) + 'px'
+          //   } else {
+          //     bottomElement.style.marginTop = ( space * -.7 ) + 'px'
+          //   }
+
+          // }
+
+
+
+          var pixelsAboveFold = sectionTwoPixelsAboveFold();
+
+          if ( pixelsAboveFold < 0 ) {
+            console.log(pixelsAboveFold);
+            tightenMiddleBottom(pixelsAboveFold);
+            // setTimeout( function() {
+            //   centerButton()
+            // }, 500)
+          } else {
+            // centerButton();
+          }
+           
+       
+
+
+          // if ( window.innerWidth >= 710 ) {
+          //   var innerHeight = window.innerHeight;
+          // } else {
+          //   var innerHeight = bottomElement.getBoundingClientRect().top + 100;
+          // }
+          // var heroSection = document.querySelectorAll('.section--intro')[0];
+          // var heroSectionSpecs = heroSection.getBoundingClientRect();
 
           function updateCSS(element, addOrSubtract, styleAttr, pixels) {
             if ( addOrSubtract === 'add' ) {
@@ -1088,18 +1045,18 @@ export default {
             }
           }
 
-          var heightDiff = innerHeight - heroSectionSpecs.height;
+          // var heightDiff = innerHeight - heroSectionSpecs.height;
 
-          if ( heightDiff > 0 ) {
-              var pixelsToAdd = heightDiff;
-              updateCSS(topElement, 'add', 'marginTop', (pixelsToAdd * .5))
-              updateCSS(bottomElement, 'add', 'marginTop', (pixelsToAdd * .3))
-              updateCSS(bottomElement, 'add', 'marginBottom', (pixelsToAdd * .2))
-          } else if ( heightDiff < 0 ) {
-              var pixelsToRemove = heightDiff * -1
-              // updateCSS(topElement, 'subtract', 'marginTop', (pixelsToRemove * .1))
-              updateCSS(bottomElement, 'subtract', 'marginBottom', (pixelsToRemove))
-          }
+          // if ( heightDiff > 0 ) {
+          //     var pixelsToAdd = heightDiff;
+          //     updateCSS(topElement, 'add', 'marginTop', (pixelsToAdd * .5))
+          //     updateCSS(bottomElement, 'add', 'marginTop', (pixelsToAdd * .2))
+          //     updateCSS(bottomElement, 'add', 'marginBottom', (pixelsToAdd * .2))
+          // } else if ( heightDiff < 0 ) {
+          //     var pixelsToRemove = heightDiff * -1
+          //     // updateCSS(topElement, 'subtract', 'marginTop', (pixelsToRemove * .1))
+          //     updateCSS(bottomElement, 'subtract', 'marginBottom', (pixelsToRemove))
+          // }
 
       }
       
@@ -1178,10 +1135,14 @@ export default {
 
 .hideMob {
   @media only screen and (max-width: 710px) {
-    display: none;
+    display: none !important;
   }
 }
 
+h4.subCTA {
+    font-weight: 400;
+    margin: 0 auto 50px auto;
+  }
 
 .message {
   position: relative;
@@ -1197,12 +1158,10 @@ export default {
     @media only screen and (max-width: 1024px) {
       font-size: 42px;
       line-height: 1.25;
-      margin-top: 30px;
+      // margin-top: 30px;
     }
     @media only screen and (max-width: 710px) {
       font-size: 32px;
-      line-height: 1.25;
-      margin-top: 30px;
     }
       
   }
@@ -1245,16 +1204,16 @@ export default {
 
   &--intro {
     min-height: auto;
-    padding-top: 80px;
+    padding-top: 100px;
     background-color: #14101D;
     @media only screen and (max-width: 710px) {
-        padding-top: 95px;
+        padding-top: 125px;
       }
 
     h1 {
       font-size: 62px;
       line-height: 1;
-      margin-bottom: -16px;
+      
 
       @media only screen and (max-width: 1024px) {
         font-size: 42px;
@@ -1283,13 +1242,16 @@ export default {
       position: relative;
       z-index: 500;
       transform: none;
-      margin-top: 0px;
-      bottom: 150px;
+      margin-bottom: 20px;
+      margin-top: 0;
+      transition: all .15s $ease-in-quad;
+      // bottom: 150px;
         @media only screen and (max-width: 1024px) {
-            margin-top: 0px;
+          margin-top: -15px;
         }
         @media only screen and (max-width: 710px) {
-          margin-top: 20px;
+          margin-top: -30px;
+
         }
 
       .check-channels {
@@ -1318,7 +1280,7 @@ export default {
 
     .reflection {
       width: 180%;
-      max-height: 250px;
+      height: 150px;
       margin-top: -100px;
         @media only screen and (max-width: 1024px) {
           width: 250%;
@@ -1347,6 +1309,17 @@ export default {
       margin: 0 auto;
       max-width: 80vh;
       width: 90%;
+      min-width: 100px;
+      @media only screen and (max-width: 1024px) {
+        max-width: 75vh;
+      }
+      @media only screen and (max-width: 710px) {
+        max-width: 70vh !important;
+      }
+      @media only screen and (max-width: 440px) {
+        max-width: 100% !important;
+        width: 300px !important;
+      }
 
       &:after {
         content: "";
@@ -1490,6 +1463,13 @@ export default {
           margin-left: auto;
         }
       }
+      &:nth-child(2) img {
+        @media only screen and (max-width: 710px) {
+          width: 100%;
+          max-width: 147px;
+        }
+      }
+      
 
       p {
 
@@ -1501,7 +1481,7 @@ export default {
     }
 
     .actions {
-      margin: 30px auto 50px auto;
+      margin: 30px auto 10px auto;
     }
 
     .icon-box {
@@ -1573,8 +1553,9 @@ export default {
       position: relative;
       z-index: 10;
       margin-top: 15px;
-      margin-bottom: 50px;
+      margin-bottom: 10px;
     }
+
   }
 
   &--devices {
@@ -1582,7 +1563,10 @@ export default {
     justify-content: center;
     background: $gradient-orange-purple;
     overflow: hidden;
+    padding-top: 50px;
+    padding-bottom: 50px;
     padding-left: 50px;
+
       @media only screen and (max-width: 1024px) {
         padding: 0 5%;
       }
@@ -1593,19 +1577,52 @@ export default {
     
     .message {
       text-align: left;
+      width: 37%;
       @media only screen and (max-width: 1024px) {
-        width: 33%;
-        padding-top: 30px;
+        width: 37%;
+        padding: 30px 0;
       }
       @media only screen and (max-width: 710px) {
         width: 100%;
         display: block;
         text-align: center;
       }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      .deviceIcons {
+        text-align: left;
+        margin-top: 30px;
+        img {
+          width: 50%;
+          display: inline-block;
+          @media only screen and (max-width: 1200px) {
+            display: block;
+            width: 100%;
+          }
+          @media only screen and (max-width: 710px) {
+            width: 90%;
+            margin: 0 auto;
+          }
+        }
+
+      }
       
       .actions {
         margin: 30px auto 70px auto;
+        h4 {
+        text-align: left;
+        padding: 0 15px;
+        margin-top: 10px;
+          @media only screen and (max-width: 710px) {
+          text-align: center;
+          padding: 0px;
+          }
+        }
       }
+      
       
     }
 
@@ -1615,8 +1632,10 @@ export default {
       max-width: 1200px;
       margin-top: 50px;
       margin-bottom: 50px;
+      width: 63%;
+
         @media only screen and (max-width: 1024px) {
-          width: 66%;
+          width: 63%;
           right: -18%;
           padding-top: 50px;
           margin-top: 0px;
@@ -1644,14 +1663,14 @@ export default {
   }
 
   &--zip {
-    position: relative;
-    align-items: center;
-    justify-content: space-between;
+    display: block;
+    // position: relative;
+    // align-items: center;
+    // justify-content: space-between;
     padding: 50px;
     background: $color-site-bg;
     @media only screen and (max-width: 1024px) {
       display: block;
-      align-items: center;
       padding: 25px 5%;
     }
     @media only screen and (max-width: 710px) {
@@ -1674,8 +1693,9 @@ export default {
     .message {
       position: relative;
       z-index: 10;
-      text-align: left;
+      text-align: center;
       max-width: 400px;
+      padding-top: 10px;
         @media only screen and (max-width: 1024px) {
           text-align: center;
           max-width: 100%;
@@ -1755,9 +1775,9 @@ export default {
     }
 
     .btn {
-      margin-top: 50px;
+      margin: 50px auto 10px auto;
       @media only screen and (max-width: 1024px) {
-        margin: 30px auto;
+        margin: 30px auto 10px auto;
       }  
       @media only screen and (max-width: 710px) {   
       }
@@ -1768,7 +1788,8 @@ export default {
     .options {
       position: relative;
       z-index: 10;
-      width: calc(100% - 450px);
+      width: 90%;
+      margin: 0 auto;
       @media only screen and (max-width: 1024px) {
         width: 100%;
       } 
@@ -1777,9 +1798,9 @@ export default {
            
       
       .option {
-        &:first-child {
-          margin-bottom: 50px;
-        }
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-bottom: 50px;
 
         &--premium {
           display: block;
@@ -1860,6 +1881,7 @@ export default {
       padding: 6px 15px;
       border-radius: 6px 6px 0 0;
       background: $color-blue;
+      min-height: 74px;
 
       h3 {
         font-weight: 700;
@@ -1934,6 +1956,10 @@ export default {
       border-radius: 0 0 6px 6px;
     }
 
+    .item.fuboextra:first-child {
+      grid-column: 1 / 5;
+    }
+    
     .item {
       display: flex;
       align-items: center;
@@ -1962,6 +1988,127 @@ export default {
       .logo {
         width: 60%;
       }
+    }
+    .item.text {
+      width: 150px;
+      span {
+        font-size: 12px;
+        font-weight: 600;
+
+      }
+    }
+
+    .addOnContain {
+      display: flex;
+      justify-content: space-around;
+      border: 3px solid rgba($color-blue, .5);
+      border-top: 0;
+      border-radius: 0 0 6px 6px;
+      min-height: 300px;
+        @media only screen and (max-width: 710px) {
+          display: block;
+        }
+
+      h3 {
+          font-size: 24px;
+          line-height: 1;
+      }
+      p {
+        padding: 0 5%;
+      }
+      .addOnChannels {
+        // display: flex;
+        // align-items: center;
+        // justify-content: flex-start;
+        // flex-direction: column;
+        width: calc( 50% - 40px);
+        text-align: center;
+        margin: 30px 5%;
+        @media only screen and (max-width: 1024px) {
+        }  
+        @media only screen and (max-width: 710px) {
+          width: 90%;
+          display: inline-block;
+        }
+
+        .logoContain {
+
+          .logos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+            justify-content: start;
+            gap: 10px 30px;
+            margin-top: 20px;
+
+            .item {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+              width: 65px;
+              height: 60px;
+              margin: 10px 0;
+              transition: all .15s $ease-out-quad;
+              overflow: hidden;
+
+            }
+          }
+        }
+      }
+
+      p {
+          font-size: 18px;
+        }
+
+      .addOnFeatures {
+        width: calc(50% - 40px);
+        text-align: center;
+        margin: 30px 5%;
+        @media only screen and (max-width: 1024px) {
+         }  
+        @media only screen and (max-width: 710px) {
+          width: 90%;
+          display: inline-block;
+          margin: 15px 5%;
+        }
+
+        img {
+          width: 100%;
+          max-width: 100px;
+        }
+
+        .featuresContain {
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          align-items: center;
+          margin: 10px 0;
+          border-radius: 5px;
+
+
+
+          .featureBox {
+            width: calc(50% - 20px);
+            margin-left: 10px;
+            margin-right: 10px;
+            .text {              
+              padding: 0 0 20px 0;
+              font-size: 20px;
+              color: #FFFFFF;
+              line-height: 1;
+              font-weight: 600;
+              margin-top: -10px;
+              @media only screen and (max-width: 1300px) {
+              font-size: 18px;
+            } 
+            }
+             
+          }
+        }
+        
+
+      }
+
     }
   }
 
@@ -1998,7 +2145,7 @@ export default {
     }
 
     button {
-      margin-bottom: 50px;
+      margin-bottom: 10px;
     }
 
     .details {
@@ -2011,6 +2158,7 @@ export default {
     justify-content: center;
     flex-direction: column;
     padding-top: 50px;
+    padding-bottom:  50px;
       @media only screen and (max-width: 1024px) {
         padding-top: 30px;
         padding-bottom: 30px;

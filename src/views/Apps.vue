@@ -2,8 +2,10 @@
   <div class="apps">
     <div class="hero">
       <div class="message">
-        <h1>LIVE TV. <br>ANYTIME, ANYWHERE.</h1>
-        <p>Your favorite teams and shows on the go or on the couch.</p>
+        <h1>YOUR SCREENS. <br>
+        YOUR TERMS.<br>
+        </h1>
+        <p>Download the free fuboTV apps for all your devices. Watch what you want, when you want.</p>
       </div>
     </div>
 
@@ -23,7 +25,7 @@
             <li>Roku 3</li>
             <li>Roku 4</li>
           </ul>
-          <a class="btn btn--download" href="">Download</a>
+          <a class="btn btn--download" href="https://fubo.tv/signup">Start Your Free Trial</a>
         </div>
 
         <div class="device">
@@ -37,7 +39,7 @@
             <li>Fire TV 2nd Generation</li>
             <li>Fire TV 3rd Generation</li>
           </ul>
-          <a class="btn btn--download" href="">Download</a>
+          <a class="btn btn--download" href="https://fubo.tv/signup">Start Your Free Trial</a>
         </div>
 
         <div class="device">
@@ -50,7 +52,7 @@
             <li>Apple TV 4th Generation</li>
             <li>Apple TV 4K</li>
           </ul>
-          <a class="btn btn--download" href="">Download</a>
+          <a class="btn btn--download" href="https://fubo.tv/signup">Start Your Free Trial</a>
         </div>
 
         <div class="device">
@@ -62,7 +64,7 @@
           <ul>
             <li>Android TV 4.4+</li>
           </ul>
-          <a class="btn btn--download" href="">Download</a>
+          <a class="btn btn--download" href="https://fubo.tv/signup">Start Your Free Trial</a>
         </div>
       </div>
     </div>
@@ -82,7 +84,7 @@
             <li>iPhone</li>
             <li>iPad</li>
           </ul>
-          <a class="btn btn--download" href="">Download</a>
+          <a class="btn btn--download" href="https://fubo.tv/signup">Start Your Free Trial</a>
         </div>
 
         <div class="device">
@@ -95,7 +97,7 @@
             <li>Phones</li>
             <li>Tablets</li>
           </ul>
-          <a class="btn btn--download" href="">Download</a>
+          <a class="btn btn--download" href="https://fubo.tv/signup">Start Your Free Trial</a>
         </div>
 
         <div class="device">
@@ -108,7 +110,7 @@
             <li>Desktops</li>
             <li>Laptops</li>
           </ul>
-          <a class="btn btn--download" href="">Download</a>
+          <a class="btn btn--download" href="https://fubo.tv/signup">Start Your Free Trial</a>
         </div>
 
         <div class="device">
@@ -120,7 +122,7 @@
           <ul>
             <li>All versions</li>
           </ul>
-          <a class="btn btn--download" href="">Download</a>
+          <a class="btn btn--download" href="https://fubo.tv/signup">Start Your Free Trial</a>
         </div>
       </div>
     </div>
@@ -311,6 +313,8 @@ export default {
 .message {
   position: relative;
   z-index: 10;
+  margin-top: 30px;
+  padding: 0 5%;
   h1 {
     font-size: 48px;
     font-weight: 900;
