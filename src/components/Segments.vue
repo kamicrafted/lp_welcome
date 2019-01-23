@@ -49,6 +49,12 @@ export default {
     margin-left: 0;
   }
 
+  &-item:nth-child(3) { 
+    @media only screen and (max-width: 710px) {
+    }
+  }
+
+
   &-item:last-child {
     border-radius: 0 4px 4px 0;
   }
@@ -69,6 +75,10 @@ export default {
     transition: all .15s $ease-out-quad;
     cursor: pointer;
     text-transform: uppercase;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+
     @media only screen and (max-width: 1024px) {
     }
     @media only screen and (max-width: 710px) {

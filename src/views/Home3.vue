@@ -298,7 +298,7 @@
         <div class="question question--entertainment">
           <h3>Does fuboTV have entertainment channels like FOX, CBS and NBC?</h3>
           <p>
-            Yes, fuboTV has FOX*, CBS*, NBC*, Regional Sports Networks* as well as AMC, CNN, FOX News, MSNBC, beIN, Univision, FX, HGTV, SYFY, USA, Bravo, A&E, Food Network, E!, National Geographic, and History Channel among 100+ other channels. *Regional restrictions apply.
+            Yes, fuboTV has FOX*, CBS*, NBC*, Regional Sports Networks* as well as AMC, CNN, FOX News, MSNBC, beIN, Univision, FX, HGTV, SYFY, USA, Bravo, A&amp;E, Food Network, E!, National Geographic, and History Channel among 100+ other channels. *Regional restrictions apply.
           </p>
         </div>
 
@@ -319,7 +319,7 @@
         <div class="question question--cost">
           <h3>How much does fuboTV cost? Is there a free trial?</h3>
           <p>
-            All new users receive 7 days of free access to fuboTV (unless you opt into a discounted prepay promotional plan). After your trial has ended, your card will be charged a  discounted rate for your first month. Prices vary based on package and selected add-ons.
+            All new users receive 7 days of free access to fuboTV (unless you opt into a discounted prepay promotional plan). After your trial has ended, your card will be charged for your first month. Prices vary based on package and selected add-ons.
           </p>
         </div>
 
@@ -768,7 +768,7 @@ export default {
           subtitle: 'S30 • E9 - Daddicus Finch',
           logo: 'livelogo/fox.png',
           thumb: 'https://fubotv-v3-dev-custom-assets.imgix.net/image_overrides/Simpsons_S30_1920x1080_1.jpg',
-          category: 'Popular Shows'
+          category: 'Top Channels'
         },
         {
           title: 'This is Us',
@@ -946,7 +946,6 @@ export default {
         this.showScrollHint = true
         this.$emit('header-mode', 'transparent')
       }
-      // console.log('scrolling...' + window.scrollY)
     }, 
     resizeHandler (e) {
       var scrollTimeout;
@@ -974,23 +973,23 @@ export default {
 
           function sectionTwoPixelsAboveFold() {
             let innerHeight = window.innerHeight;
-            let sectionTwo = channelCount.getBoundingClientRect().bottom
+            let sectionTwo = channelCount.getBoundingClientRect().top + 32;
             return innerHeight - sectionTwo
           }
 
           function tightenMiddleBottom(pixelsToRemove){
             let spaceBetween = bottomElement.getBoundingClientRect().top - middleElement.getBoundingClientRect().bottom
             pixelsToRemove = pixelsToRemove * -1
-            let maxReduction = spaceBetween + 10
+            let maxReduction = spaceBetween + 15
+            console.log(pixelsToRemove, maxReduction)
             if (pixelsToRemove > maxReduction) {
-              if ( middleElement.getBoundingClientRect().width > 500 ) {
-                console.log(middleElement.getBoundingClientRect().width);
+              console.log('yes');
                 middleElement.style.width = middleElement.getBoundingClientRect().width - (pixelsToRemove - maxReduction) + 'px';
-                  middleElement.style.maxWidth = '90%';
-                bottomSpacer.style.height = bottomSpacer.getBoundingClientRect().height - maxReduction * .9 + 'px';
-              }
+                middleElement.style.maxWidth = '85%';
+                bottomSpacer.style.height = bottomSpacer.getBoundingClientRect().height - (maxReduction) + 'px';
+              
             } else {
-              bottomSpacer.style.height = bottomSpacer.getBoundingClientRect().height - pixelsToRemove + 'px';
+              bottomSpacer.style.height = (bottomSpacer.getBoundingClientRect().height - pixelsToRemove) + 'px';
             }
           }
           
@@ -1011,7 +1010,6 @@ export default {
           var pixelsAboveFold = sectionTwoPixelsAboveFold();
 
           if ( pixelsAboveFold < 0 ) {
-            console.log(pixelsAboveFold);
             tightenMiddleBottom(pixelsAboveFold);
             // setTimeout( function() {
             //   centerButton()
@@ -1097,11 +1095,9 @@ export default {
     window.addEventListener('resize', this.resizeHandler)
     this.resizeHandler();
     this.carouselUpdater();
-    // console.log('listening for scroll')
   },
   beforeDestroy () {
     window.removeEventListener('scroll', this.scrollHandler)
-    // console.log('stopped listening')
   }
 }
 </script>
@@ -1204,14 +1200,14 @@ h4.subCTA {
 
   &--intro {
     min-height: auto;
-    padding-top: 100px;
+    padding-top: 85px;
     background-color: #14101D;
     @media only screen and (max-width: 710px) {
         padding-top: 125px;
       }
 
     h1 {
-      font-size: 62px;
+      font-size: 56px;
       line-height: 1;
       
 
@@ -1247,12 +1243,15 @@ h4.subCTA {
       transition: all .15s $ease-in-quad;
       // bottom: 150px;
         @media only screen and (max-width: 1024px) {
-          margin-top: -15px;
+          margin-top: -30px;
         }
         @media only screen and (max-width: 710px) {
           margin-top: -30px;
-
         }
+        @media only screen and (max-width: 490px) {
+          margin-top: 20px;
+        }
+
 
       .check-channels {
         padding: 20px 40px;
@@ -1274,7 +1273,7 @@ h4.subCTA {
       margin-bottom: 20px;
       padding: 0 5%;
         @media only screen and (max-width: 710px) {
-          margin-bottom: 15px;
+          margin-bottom: 5px;
         }
     }
 
@@ -1283,8 +1282,8 @@ h4.subCTA {
       height: 150px;
       margin-top: -100px;
         @media only screen and (max-width: 1024px) {
+          margin-top: -100px;
           width: 250%;
-          margin-top: -100px
         }
         @media only screen and (max-width: 710px) {
           margin-top: -100px;
@@ -1309,16 +1308,18 @@ h4.subCTA {
       margin: 0 auto;
       max-width: 80vh;
       width: 90%;
-      min-width: 100px;
+      min-width: 450px !important;
+
       @media only screen and (max-width: 1024px) {
         max-width: 75vh;
       }
       @media only screen and (max-width: 710px) {
         max-width: 70vh !important;
+
       }
       @media only screen and (max-width: 440px) {
         max-width: 100% !important;
-        width: 300px !important;
+        min-width: 300px !important;
       }
 
       &:after {
@@ -1667,11 +1668,11 @@ h4.subCTA {
     // position: relative;
     // align-items: center;
     // justify-content: space-between;
-    padding: 50px;
+    padding: 30px;
     background: $color-site-bg;
     @media only screen and (max-width: 1024px) {
       display: block;
-      padding: 25px 5%;
+      padding: 20px 5%;
     }
     @media only screen and (max-width: 710px) {
         
@@ -1699,7 +1700,7 @@ h4.subCTA {
         @media only screen and (max-width: 1024px) {
           text-align: center;
           max-width: 100%;
-          margin-top: 30px;
+          margin-top: 25px;
         }
         @media only screen and (max-width: 710px) {
             
@@ -2047,7 +2048,7 @@ h4.subCTA {
               position: relative;
               width: 65px;
               height: 60px;
-              margin: 10px 0;
+              margin: 10px auto;
               transition: all .15s $ease-out-quad;
               overflow: hidden;
 

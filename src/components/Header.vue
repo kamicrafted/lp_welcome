@@ -9,6 +9,7 @@
         </router-link>
         <!-- <router-link to="/promos">Promotions</router-link> -->
         <!-- <router-link to="/apps">Apps</router-link> -->
+        <a v-scroll-to="'#devices'">Apps</a>
         <a href="https://support.fubo.tv">Help Center</a>
 
       </div>
@@ -25,7 +26,7 @@
       </div>
 
       <div class="links showMob">
-        <!-- <router-link to="/apps">Apps</router-link> -->
+        <a v-scroll-to="'#devices'">Apps</a>
         <a href="https://support.fubo.tv">Help</a>
         <a class="" href="https://www.fubo.tv/signin">Sign in</a>
         <a class="" href="https://www.fubo.tv/signup">Start your free trial</a>
