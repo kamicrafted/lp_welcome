@@ -4,11 +4,11 @@
       <img class="logo" :src="require('@/assets/' + tiledata.logo)" alt="">
     </div>
     <div class="thumbnail">
-      <img :src="require('@/assets/' + tiledata.thumb)" alt="">
+      <img :src="tiledata.thumb + '?w=816&h=416&fit=fillmax&fill=solid&fill-color=302E38&auto=format,compress'" alt="">
     </div>
     <div class="info">
       <div class="record"></div>
-      <div class="airtime">{{ tiledata.day }}&nbsp;&nbsp;{{ tiledata.time }}</div>
+      <!-- <div class="airtime">{{ tiledata.day }}&nbsp;&nbsp;{{ tiledata.time }}</div> -->
       <h3 class="title">{{ tiledata.title }}</h3>
       <div class="meta">{{ tiledata.subtitle }}</div>
     </div>

@@ -5,13 +5,101 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>welcomewidget</title>
+    <title>fuboTV - Watch &amp; DVR Live Sports &amp; TV Online</title>
+    <link rel="canonical" href="https://www.fubo.tv/welcome" >
+    <meta name="description" content="Stream and record live sports and TV from FOX, NBC, beIN SPORTS, Univision, NBA TV, A&amp;E &amp; more. Watch live on any device: Desktop, iOS, Android, Roku, Apple TV &amp; more. Cancel anytime." >
+    <meta name="keywords" content="fubo, fubotv, fubo tv, sports, watch, stream, live, tv, soccer, football, nhl, mba, mlb, nfl" >
+    <meta property="og:type" content="video.other" >
+    <meta property="og:url" content="https://www.fubo.tv/welcome" >
+    <meta property="og:title" content="Watch &amp; DVR Live Sports &amp; TV Online | fuboTV" >
+    <meta property="og:description" content="Stream and record live sports and TV from FOX, NBC, beIN SPORTS, Univision, NBA TV, A&amp;E &amp; more. Watch live on any device: Desktop, iOS, Android, Roku, Apple TV &amp; more. Cancel anytime." >
+    <meta property="og:image" content="https://fubo.tv/lp/LPBG/meta/facebook.jpg" >
+    <meta property="og:image:secure_url" content="https://fubo.tv/lp/LPBG/meta/facebook.jpg" >
+    <meta name="twitter:card" content="summary" >
+    <meta name="twitter:site" content="@fubotv" >
+    <meta name="twitter:url" content="https://www.fubo.tv/welcome" >
+    <meta name="twitter:title" content="Watch &amp; DVR Live Sports &amp; TV Online | fuboTV" >
+    <meta name="twitter:description" content="Stream and record live sports and TV from FOX, NBC, beIN SPORTS, Univision, NBA TV, A&amp;E &amp; more. Watch live on any device: Desktop, iOS, Android, Roku, Apple TV &amp; more. Cancel anytime." >
+    <meta name="twitter:image" content="https://fubo.tv/lp/LPBG/meta/twitter.jpg" >
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://www.fubo.tv/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.fubo.tv/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.fubo.tv/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.fubo.tv/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://www.fubo.tv/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://www.fubo.tv/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://www.fubo.tv/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://www.fubo.tv/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="https://www.fubo.tv/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="https://www.fubo.tv/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://www.fubo.tv/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://www.fubo.tv/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="https://www.fubo.tv/favicon-128.png" sizes="128x128">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-N3FQ7TG');</script>
+  <!-- End Google Tag Manager -->
+
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but welcomewidget doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>We're sorry but this site doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N3FQ7TG"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div id="app"></div>
     <!-- built files will be auto injected -->
+
+    <script>
+
+    function getURLParameter(sParam) {
+        var sPageURL = window.location.search.substring(1);
+        var sURLVariables = sPageURL.split('&');
+        for (var i = 0; i < sURLVariables.length; i++) {
+            var sParameterName = sURLVariables[i].split('=');
+            if (sParameterName[0] == sParam || sParameterName[0] == encodeURIComponent(sParam)) {
+                return sParameterName[1];
+            }
+        }
+    }
+
+    var ftv_campaign = getURLParameter('ftv_campaign');
+
+
+    // load amplitude iframe
+    // Javascript to trigger Amplitude Track event
+    // Calls and embeds track.html iframe into the page
+    var valueOrEmpty = function(value) {
+        return value ? value : '';
+    }
+
+    var analyticsProps = {
+        'app_name': 'page-view-tracker',
+        'app_version': '1.0.0',
+        'device_category': 'web',
+        'event_category': 'user_action',
+        'event_metadata.referrer': valueOrEmpty(document.referrer),
+        'event_metadata.url': valueOrEmpty(window.location.href),
+        'event_metadata.domain': valueOrEmpty(window.location.hostname),
+        'ftv_campaign': ftv_campaign
+    }
+
+    var flattenedProps = encodeURIComponent(JSON.stringify(analyticsProps));
+    var iframe = document.createElement('iframe');
+    iframe.style.display = "none";
+    var srcUrl = "https://widget.fubo.tv/track.html?";
+    srcUrl += "eventName=page_view";
+    srcUrl += "&eventProperties=" + flattenedProps;
+    srcUrl += "&amplitudeId=627bfe7582c1d63e872b474eec401069";
+    iframe.src = srcUrl;
+    document.getElementsByTagName('head')[0].append(iframe);
+    
+    </script>
   </body>
 </html>
