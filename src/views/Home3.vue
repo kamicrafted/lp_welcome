@@ -476,9 +476,11 @@ export default {
 }
 
 h4.subCTA {
-    font-weight: 400;
-    margin: 0 auto 50px auto;
-  }
+  position: relative;
+  z-index: 50;
+  font-weight: 400;
+  margin: 0 auto 50px auto;
+}
 
 .message {
   position: relative;
@@ -538,162 +540,6 @@ h4.subCTA {
   justify-content: center;
   min-height: 85vh;
 
-  &--benefits {
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    background: $gradient-blue-purple-light;
-    padding: 50px 5%;
-     @media only screen and (max-width: 1024px) {
-        padding: 20px 0;
-      }
-
-    // &:after {
-    //   content: '';
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 100%;
-    //   background-position: center center;
-    //   background-image: url('../assets/bg-benefits.jpg');
-    //   background-size: cover;
-    //   mix-blend-mode: overlay;
-    //   opacity: .3;
-    // }
-
-    .message {
-      @media only screen and (max-width: 710px) {
-          margin-top: 30px;
-          padding: 0 5%;
-      }
-
-      p {
-        @media only screen and (max-width: 1024px) {
-          font-size: 16px;
-          line-height: 23px;
-        }
-        @media only screen and (max-width: 710px) {
-          max-width: 80%;
-          margin: 20px auto;
-          display: block;
-        }
-
-      }
-    }
-    h1 {
-        @media only screen and (max-width: 1024px) {
-          font-size: 42px;
-          line-height: 52px;
-        }
-        @media only screen and (max-width: 710px) {
-          margin-top: 30px;
-          font-size: 36px;
-          line-height: 38px;
-        }
-      }
-
-
-    .features {
-      display: flex;
-      padding-top: 50px;
-      justify-content: center;
-        @media only screen and (max-width: 710px) {
-          display: block;
-          padding-top: 0px;
-        }
-
-      p {
-        @media only screen and (max-width: 1024px) {
-          font-size: 16px;
-          line-height: 23px;
-        }
-        @media only screen and (max-width: 710px) {
-          font-size: 14px;
-          line-height: 23px;
-        }
-      }
-
-      h3 {
-        font-size: 21px;
-        color: #FFF680;
-
-        @media only screen and (max-width: 1024px) {
-          font-size: 18px;
-          line-height: 23px;
-        }
-        @media only screen and (max-width: 710px) {
-          font-size: 16px;
-          line-height: 21px;
-        }
-      }
-    }
-
-    .features-item {
-      max-width: 360px;
-      padding: 0 20px;
-      text-align: center;
-        @media only screen and (max-width: 710px) {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center; 
-          text-align: left;
-          max-width: 100%;
-          margin: 30px 0;
-        }
-
-      img {
-        margin-bottom: 20px;
-        @media only screen and (max-width: 710px) {
-          width: 70%;
-          margin-right: auto;
-          margin-left: auto;
-        }
-      }
-      &:nth-child(2) img {
-        @media only screen and (max-width: 710px) {
-          width: 100%;
-          max-width: 147px;
-        }
-      }
-      
-
-      p {
-
-        @media only screen and (max-width: 1024px) {
-          max-width: 100%
-        }
-
-      }
-    }
-
-    .actions {
-      margin: 30px auto 10px auto;
-    }
-
-    .icon-box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100px;
-
-      @media only screen and (max-width: 710px) {
-          display: flex;
-          width: 33%;
-          margin-right: 10px;
-      }
-    }
-
-    .copy-box {
-      @media only screen and (max-width: 710px) {
-          display: inline-block;
-          width: 66%;
-        }
-    }
-
-  }
-
   &--livenow {
     position: relative;
     align-items: center;
@@ -701,28 +547,30 @@ h4.subCTA {
     flex-direction: column;
     background: $gradient-blue-purple-dark;
     overflow: hidden;
+    height: 100%;
 
     .section-inner {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       width: 100%;
       height: 100%;
     }
 
-    // &:after {
-    //   content: '';
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 100%;
-    //   background-position: center center;
-    //   background-size: cover;
-    //   background-image: url('../assets/bg-live-shows.jpg');
-    //   mix-blend-mode: multiply;
-    //   opacity: .8;
-    // }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-position: center center;
+      background-size: cover;
+      background-image: url('../assets/bg-live-shows.jpg');
+      mix-blend-mode: multiply;
+      opacity: .6;
+    }
 
     .message,
     .segments,

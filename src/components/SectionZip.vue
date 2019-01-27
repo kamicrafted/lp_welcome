@@ -491,12 +491,17 @@ export default {
 @import '../scss/app';
 
 .section {
-  .wrapper {
+  &-wrapper {
+    display: flex;
+    align-items: flex-start;
     max-width: 1600px;
     margin: 0 auto;
 
     @media only screen and (min-width: 1281px) {
       .message {
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 100px;
         text-align: left !important;
         padding: 50px 0 0 50px !important;
       }
@@ -513,7 +518,7 @@ export default {
     position: relative;
     // align-items: center;
     // justify-content: space-between;
-    padding: 30px;
+    padding: 50px 30px;
     background: $color-site-bg;
 
     

@@ -68,6 +68,7 @@ export default {
   &-item {
     position: relative;
     border: 2px solid $color-blue;
+    background: #312D88;
     padding: 10px 20px;
     line-height: 1;
     font-weight: 700;
