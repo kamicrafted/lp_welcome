@@ -68,16 +68,54 @@
           </div>
         </div>
 
-        <div class="option">
-          <div class="header">
-            <h3>Add-ons</h3>
+        <div class="option option--addons">
+          <div class="addon-group">
+            <div class="header">
+              <h3>Channel Add-ons</h3>
+            </div>
 
             <div class="detail">
-              <!-- text here -->
+              <p>Customize your channel lineup with the sports &amp; TV you love.</p>
+              
+              <div class="logoContain">
+                <div class="logos">
+                  <div class="item" v-for="channel in addOnChannels" v-bind:key="channel.name">
+                      <img class="logo" :src="channel.logoSrc" :alt="channel.name" :title="channel.name">
+                  </div>
+                </div>
+              </div>     
             </div>
           </div>
-          <div class="addOnContain">
-            <div class="addOnChannels">
+
+          <div class="addon-group">
+            <div class="header">
+              <h3>Feature Add-ons</h3>
+            </div>
+
+            <div class="detail">
+              <p>Let more people stream and record fuboTV at the same time.</p>
+              
+              <div class="featuresContain">
+                <div class="featureBox">
+                  <div class="logo logo--dvr">
+                      <img   src="https://fubotv-v3-dev-custom-assets.imgix.net/image_overrides/icon-cloud-dvr-plus.png?w=100&ch=Width&auto=format,compress" alt="DVR Plus" title="DVR Plus">
+                  </div>
+                  <h2 class="text">
+                    Cloud DVR Plus
+                  </h2>
+                </div>
+                <div class="featureBox">
+                  <div class="logo logo--family">
+                      <img  src="https://fubotv-v3-dev-custom-assets.imgix.net/image_overrides/icon-family-share.png?w=100&ch=Width&auto=format,compress" alt="DVR Plus" title="DVR Plus">
+                  </div>
+                  <h2 class="text">Family Share</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="addons">
+            <!-- <div class="addOnChannels">
               <h3>Channels</h3>
               <p>Customize your channel lineup with the sports &amp; TV you love.</p>
               <div class="logoContain">
@@ -107,8 +145,7 @@
                   <h2 class="text">Family Share</h2>
                 </div>
               </div>
-                
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -494,6 +531,7 @@ export default {
   &-wrapper {
     display: flex;
     align-items: flex-start;
+    width: 100%;
     max-width: 1600px;
     margin: 0 auto;
 
@@ -663,6 +701,129 @@ export default {
         margin: 0 auto;
         margin-bottom: 50px;
 
+        .addon-group {
+          width: calc(50%);
+          
+          &:first-child {
+            padding-right: 20px;
+          }
+
+          &:last-child {
+            padding-left: 40px;
+          }
+
+          .detail {
+            display: flex;
+            flex-direction: column;
+            border-top: 0;
+            min-height: 100px;
+            margin: 0;
+            padding: 20px;
+            border: 2px solid rgba($color-light-grey, .5);
+
+            p {
+              margin-top: 0;
+            }
+
+            .logoContain, .featuresContain {
+              width: 100%;
+            }
+
+            .logos {
+              display: flex;
+              width: 100%;
+              padding: 5px 0;
+
+              @media only screen and (max-width: 710px) {   
+                flex-wrap: wrap;
+              }
+            }
+
+            .featuresContain {
+              display: flex;
+              justify-content: space-around;
+
+              .text {
+                font-size: 18px;
+              }
+
+              .logo--family img {
+                width: 70px;
+              }
+
+              .logo--dvr img {
+                width: 80px;
+              }
+            }
+
+            .logoContain {
+              .item {
+                @media only screen and (max-width: 600px) {   
+                  width: 65px;
+                  padding: 10px 30px;
+                }
+              }
+            }
+
+            .featureBox {
+              display: flex;
+              align-items: center;
+              height: 50px;
+              overflow: hidden;
+              margin-left: -10px;
+
+              @media only screen and (max-width: 710px) {   
+                flex-direction: column;
+                height: auto;
+                overflow: visible;
+                text-align: center;
+
+                .logo {
+                  height: 76px;
+                }
+
+                .text {
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+        }
+
+        &--addons {
+          display: flex;
+          justify-content: space-between;
+
+          @media only screen and (max-width: 1024px) {   
+            flex-direction: column;
+
+            .addon-group {
+              width: 100%;
+              margin-bottom: 50px;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+          
+          .header {
+            background: rgba($color-light-grey, .5);
+            min-height: 40px;
+          }
+          
+          h3 {
+            font-size: 20px;
+            font-weight: 700;
+
+            @media only screen and (max-width: 1024px) {
+            } 
+
+            @media only screen and (max-width: 710px) {   
+            }
+          }
+        }
+
         &--premium {
           display: block;
           width: 100%;
@@ -707,6 +868,7 @@ export default {
             text-align: right;
             width: 62%;
             margin-left: 2.5%;
+
             @media only screen and (max-width: 1024px) {
               width: 100%;
               margin: 15px auto;
@@ -745,7 +907,7 @@ export default {
       padding: 6px 15px;
       border-radius: 6px 6px 0 0;
       background: $color-blue;
-      min-height: 74px;
+      min-height: 60px;
 
       h3 {
         font-weight: 700;
@@ -818,6 +980,10 @@ export default {
       border: 3px solid rgba($color-blue, .5);
       border-top: 0;
       border-radius: 0 0 6px 6px;
+
+      @media only screen and (max-width: 600px) {
+        gap: 20px 20px;
+      }            
     }
 
     .item.fuboextra:first-child {
@@ -835,6 +1001,12 @@ export default {
       transform: scale(2);
       transition: all .15s $ease-out-quad;
       overflow: hidden;
+
+      @media only screen and (max-width: 600px) {
+        width: 55px;
+        margin: 10px auto;
+        transform: scale(1.8);
+      }
 
       &:hover {
         z-index: 50;
@@ -880,6 +1052,7 @@ export default {
       p {
         padding: 0 5%;
       }
+
       .addOnChannels {
         // display: flex;
         // align-items: center;
