@@ -709,7 +709,7 @@ h4.subCTA {
     align-items: center;
     justify-content: center;
     min-height: 300px;
-    padding: 50px 0;
+    padding: 50px;
     background: $gradient-blue-purple-dark;
 
     &:after {
@@ -728,6 +728,10 @@ h4.subCTA {
     h3 {
       font-size: 26px;
       max-width: 600px;
+
+      @media only screen and (max-width: 600px) {
+        font-size: 24px;
+      }
 
       > img {
         display: inline-block;

@@ -122,11 +122,12 @@ export default {
 
     .features {
       display: flex;
-      padding-top: 50px;
       justify-content: center;
+      padding: 50px 50px 0 50px;
+
         @media only screen and (max-width: 710px) {
           display: block;
-          padding-top: 0px;
+          padding: 0 20px;
         }
 
       p {
@@ -159,28 +160,41 @@ export default {
       max-width: 360px;
       padding: 0 20px;
       text-align: center;
-        @media only screen and (max-width: 710px) {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center; 
-          text-align: left;
-          max-width: 100%;
-          margin: 30px 0;
+
+      @media only screen and (max-width: 710px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; 
+        text-align: left;
+        max-width: 100%;
+        margin: 30px 0;
+      }
+
+      @media only screen and (max-width: 710px) {
+        margin-right: auto;
+        margin-left: auto;
+
+        img {
+          width: 60px;
         }
+
+        &:first-child img {
+          width: 90px;
+        }
+
+        &:last-child img {
+          width: 80px;
+        }
+      }
 
       img {
         margin-bottom: 20px;
+
         @media only screen and (max-width: 710px) {
-          width: 70%;
+          height: 70%;
           margin-right: auto;
           margin-left: auto;
-        }
-      }
-      &:nth-child(2) img {
-        @media only screen and (max-width: 710px) {
-          width: 100%;
-          max-width: 147px;
         }
       }
       
