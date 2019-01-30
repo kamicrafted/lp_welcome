@@ -4,9 +4,8 @@
     <header class="container">
 
       <div class="nav hideMob">
-        <router-link to="/" class="logo-link">
-          <img class="logo" src="../assets/logo-fubo.svg" alt="">
-        </router-link>
+        
+        <img class="logo" src="../assets/logo-fubo.svg" alt="">
         <!-- <router-link to="/promos">Promotions</router-link> -->
         <!-- <router-link to="/apps">Apps</router-link> -->
         <a v-scroll-to="'#devices'">Apps</a>
