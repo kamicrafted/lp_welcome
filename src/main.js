@@ -4,6 +4,7 @@ import VueScrollTo from 'vue-scrollto'
 import router from './router'
 import VueRange from 'vue-for-range'
 
+
 Vue.config.productionTip = false
 
 Vue.use(VueScrollTo)

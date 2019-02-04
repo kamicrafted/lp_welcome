@@ -4,20 +4,16 @@
     <header class="container">
 
       <div class="nav hideMob">
-        <router-link to="/" class="logo-link">
-          <img class="logo" src="../assets/logo-fubo.svg" alt="">
-        </router-link>
-        <!-- <router-link to="/promos">Promotions</router-link> -->
-        <!-- <router-link to="/apps">Apps</router-link> -->
-        <a v-scroll-to="'#devices'">Apps</a>
-        <a href="https://support.fubo.tv">Help Center</a>
+        
+        <img class="logo" src="../assets/logo-fubo.svg" alt="">
+
+        <!-- <a v-scroll-to="'#devices'">Apps</a> -->
+        <a href="https://support.fubo.tv" target="_blank">Help Center</a>
 
       </div>
 
       <div class="nav showMob">
-        <router-link to="/" class="logo-link">
           <img class="logo" src="../assets/logo-fubo.svg" alt="">
-        </router-link>
       </div>
       
       <div class="links hideMob">
@@ -26,8 +22,8 @@
       </div>
 
       <div class="links showMob">
-        <a v-scroll-to="'#devices'">Apps</a>
-        <a href="https://support.fubo.tv">Help</a>
+        <!-- <a v-scroll-to="'#devices'">Apps</a> -->
+        <a href="https://support.fubo.tv" target="_blank">Help Center</a>
         <a class="" href="https://www.fubo.tv/signin">Sign in</a>
         <a class="" href="https://www.fubo.tv/signup">Start your free trial</a>
       </div>
