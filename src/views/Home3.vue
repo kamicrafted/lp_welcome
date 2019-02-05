@@ -119,6 +119,20 @@ export default {
           category: 'Top Channels'
         },
         {
+          title: 'The Herd with Colin Cowherd',
+          subtitle: '',
+          logo: 'livelogo/fs1.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p299598_b_h10_ab.jpg',
+          category: 'Top Channels Live Sports'
+        },
+        {
+          title: 'Premier League Goal Zone',
+          subtitle: '',
+          logo: 'livelogo/nbcsn.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p10112820_b_h10_ab.jpg',
+          category: 'Top Channels Live Sports'
+        },
+        {
           title: 'LaLiga News',
           subtitle: '',
           logo: 'livelogo/bein.png',
@@ -159,6 +173,12 @@ export default {
           category: 'Top Channels News'
         },
         {
+          title: 'CBSN News & Breaking News Updates',
+          logo: 'livelogo/cbsn.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p16098244_b_h8_aa.jpg',
+          category: 'Top Channels News'
+        },
+        {
           title: 'Billions',
           subtitle: 'S3 • E12 - Elmsley Count',
           logo: 'livelogo/showtime.png',
@@ -170,7 +190,7 @@ export default {
           subtitle: 'S5 • E18 - Rock Star Renovation',
           logo: 'livelogo/hgtv.png',
           thumb: 'https://fubotv-v3-dev.imgix.net/assets/p9928145_b_h8_ag.jpg',
-          category: 'Top Channels'
+          category: 'Top Channels On Demand'
         },
         {
           title: 'Diners, Drive-ins and Dives',
@@ -184,13 +204,20 @@ export default {
           subtitle: '',
           logo: 'livelogo/ae.png',
           thumb: 'https://fubotv-v3-dev.imgix.net/assets/p13357824_b_h8_an.jpg?',
-          category: 'Top Channels'
+          category: 'Top Channels On Demand'
         },
         {
           title: 'The Walking Dead',
           subtitle: 'S9 • E8 - Evolution',
           logo: 'livelogo/amc.png',
           thumb: 'https://fubotv-v3-dev.imgix.net/assets/p8282918_b_h10_aw.jpg',
+          category: 'Top Channels On Demand'
+        },
+        {
+          title: 'Killing Eve',
+          subtitle: 'S1 • E2 - I\'ll Deal With Him Later',
+          logo: 'livelogo/bbcamerica.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p15086357_b_h10_af.jpg',
           category: 'Top Channels'
         },
         { 
@@ -203,11 +230,18 @@ export default {
           category: 'Top Channels'
         },
         {
+          title: 'Teen Titans Go!',
+          subtitle: '',
+          logo: 'livelogo/cartoon-network.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p9843808_b_h10_al.jpg',
+          category: 'Top Channels'
+        },
+        {
           title: 'Keeping up with the Kardashians',
           subtitle: 'S15 • E16 - Break Free',
           logo: 'livelogo/e.png',
           thumb: 'https://fubotv-v3-dev.imgix.net/assets/p185738_b_h8_bg.jpg',
-          category: 'Top Channels'
+          category: 'Top Channels On Demand'
         },
         {
           title: "It's Always Sunny in Philadelphia",
@@ -217,10 +251,17 @@ export default {
           category: 'Top Channels On Demand'
         },
         {
-          title: 'Modern Family',
-          subtitle: 'S7 • E22 - Double-Click',
-          logo: 'livelogo/usa.png',
-          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p3560360_b_h8_nu.jpg',
+          title: "Fantastic Four",
+          subtitle: '',
+          logo: 'livelogo/fxm.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p10854519_v_h10_aa.jpg',
+          category: 'Top Channels On Demand'
+        },
+        {
+          title: 'Home & Family',
+          subtitle: '',
+          logo: 'livelogo/hallmark.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p9158171_b_h10_af.jpg',
           category: 'Top Channels'
         },
         {
@@ -228,6 +269,27 @@ export default {
           subtitle: 'S18 • E89 - The Great Pick Off',
           logo: 'livelogo/history.png',
           thumb: 'https://fubotv-v3-dev.imgix.net/assets/p7939201_b_h10_ae.jpg?',
+          category: 'Top Channels'
+        },
+        {
+          title: 'Snapped',
+          subtitle: '',
+          logo: 'livelogo/oxygen.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p189681_b_h8_ao.jpg',
+          category: 'Top Channels'
+        },
+        {
+          title: 'Impractical Jokers',
+          subtitle: 'S1 • E99 - Just Say No',
+          logo: 'livelogo/trutv.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p13025184_i_h10_ad.jpg',
+          category: 'Top Channels'
+        },
+        {
+          title: 'Modern Family',
+          subtitle: 'S7 • E22 - Double-Click',
+          logo: 'livelogo/usa.png',
+          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p3560360_b_h8_nu.jpg',
           category: 'Top Channels'
         },
         {
@@ -243,15 +305,7 @@ export default {
           logo: 'livelogo/travel_channel.png',
           thumb: 'https://fubotv-v3-dev.imgix.net/assets/p8237828_b_h8_bd.jpg',
           category: 'Top Channels'
-        },
-        {
-          title: 'Suits',
-          subtitle: 'S8 • E18 - Whale Hunt',
-          logo: 'livelogo/usa.png',
-          thumb: 'https://fubotv-v3-dev.imgix.net/assets/p8630071_b_h10_ax.jpg',
-          category: 'Top Channels'
-        },
-        
+        }
       ],
     }
   },
