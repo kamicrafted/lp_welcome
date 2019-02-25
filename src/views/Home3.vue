@@ -2,7 +2,7 @@
   <div id="home" class="home">
     <SectionHero />
 
-    <SectionZip />
+    <SectionChannels v-bind:availableChannels="availableChannels" :key="componentKey"/>
 
     <SectionBenefits />
 
@@ -39,7 +39,7 @@ import Footer from '../components/Footer'
 import Carousel from '../components/Carousel'
 import Segments from '../components/Segments'
 import SectionHero from '../components/SectionHero';
-import SectionZip from '../components/SectionZip';
+import SectionChannels from '../components/SectionChannels';
 import SectionBenefits from '../components/SectionBenefits';
 import SectionDevices from '../components/SectionDevices';
 import SectionQuote from '../components/SectionQuote';
@@ -52,6 +52,7 @@ export default {
       showScrollHint: true,
       componentKey: 0,
       filteredShows: [],
+      availableChannels: { basicChannels: [], extraChannels: [], basicCount: 0, extraCount: 0, dma: ''},
       showType: 'top channels',
       networks: [
         {
@@ -253,11 +254,223 @@ export default {
         },
         
       ],
+      dma_dictionary: {
+        "500": "Portland",
+        "501": "New York",
+        "502": "Binghamton",
+        "503": "Macon",
+        "504": "Philadelphia",
+        "505": "Detroit",
+        "506": "Boston",
+        "507": "Savannah",
+        "508": "Pittsburgh",
+        "509": "Ft. Wayne",
+        "510": "Clevelandn",
+        "511": "Washington, DC",
+        "512": "Baltimore",
+        "513": "Flint",
+        "514": "Buffalo",
+        "515": "Cincinnati",
+        "516": "Erie",
+        "517": "Charlotte",
+        "518": "Greensboro",
+        "519": "Charleston",
+        "520": "Augusta",
+        "521": "Providence",
+        "522": "Columbus",
+        "523": "Burlington",
+        "524": "Atlanta",
+        "525": "Albany",
+        "526": "Utica",
+        "527": "Indianapolis",
+        "528": "Miami",
+        "529": "Louisville",
+        "530": "Tallahassee",
+        "531": "Tri-Cities",
+        "532": "Albany",
+        "533": "Hartford & New Haven",
+        "534": "Orlando",
+        "535": "Columbus",
+        "536": "Youngstown",
+        "537": "Bangor",
+        "538": "Rochester",
+        "539": "Tampa",
+        "540": "Traverse City",
+        "541": "Lexington",
+        "542": "Dayton",
+        "543": "Springfield",
+        "544": "Norfolk",
+        "545": "Greenville",
+        "546": "Columbia",
+        "547": "Toledo",
+        "548": "West Palm Beach",
+        "549": "Watertown",
+        "550": "Wilmington",
+        "551": "Lansing",
+        "552": "Presque Isle",
+        "553": "Marquette",
+        "554": "Wheeling",
+        "555": "Syracuse",
+        "556": "Richmond",
+        "557": "Knoxville",
+        "558": "Lima",
+        "559": "Bluefield",
+        "560": "Raleigh",
+        "561": "Jacksonville",
+        "563": "Grand Rapids",
+        "564": "Charleston",
+        "565": "Elmira",
+        "566": "Harrisburg",
+        "567": "Greenville",
+        "569": "Harrisonburg",
+        "570": "Myrtle Beach",
+        "571": "Ft. Myers",
+        "573": "Roanoke",
+        "574": "Johnstown",
+        "575": "Chattanooga",
+        "576": "Salisbury",
+        "577": "Scranton",
+        "581": "Terre Haute",
+        "582": "Lafayette, IN",
+        "583": "Alpena",
+        "584": "Charlottesville",
+        "588": "South Bend",
+        "592": "Gainesville",
+        "596": "Zanesville",
+        "597": "Parkersburg",
+        "598": "Clarksburg-Weston",
+        "600": "Corpus Christi",
+        "602": "Chicago",
+        "603": "Joplin",
+        "604": "Columbia",
+        "605": "Topeka",
+        "606": "Dothan",
+        "609": "St. Louis",
+        "610": "Rockford",
+        "611": "Rochester - Mason City",
+        "612": "Shreveport",
+        "613": "Minneapolis",
+        "616": "Kansas City",
+        "617": "Milwaukee",
+        "618": "Houston",
+        "619": "Springfield",
+        "622": "New Orleans",
+        "623": "Dallas - Ft. Worth",
+        "624": "Sioux City",
+        "625": "Waco",
+        "626": "Victoria",
+        "627": "Wichita Falls & Lawton",
+        "628": "Monroe",
+        "630": "Birmingham",
+        "631": "Ottumwa",
+        "632": "Paducah",
+        "633": "Odessa",
+        "634": "Amarillo",
+        "635": "Austin",
+        "636": "Harlingen",
+        "637": "Cedar Rapids",
+        "638": "St. Joseph",
+        "639": "Jackson",
+        "640": "Memphis",
+        "641": "San Antonio",
+        "642": "Lafayette",
+        "643": "Lake Charles",
+        "644": "Alexandria",
+        "647": "Greenwood",
+        "648": "Champaign & Springfield",
+        "649": "Evansville",
+        "650": "Oklahoma City",
+        "651": "Lubbock",
+        "652": "Omaha",
+        "656": "Panama City",
+        "657": "Sherman",
+        "658": "Green Bay",
+        "659": "Nashville",
+        "661": "San Angelo",
+        "662": "Abilene",
+        "669": "Madison",
+        "670": "Ft. Smith",
+        "671": "Tulsa",
+        "673": "Columbus",
+        "675": "Peoria",
+        "676": "Duluth",
+        "678": "Wichita",
+        "679": "Des Moines",
+        "682": "Davenport",
+        "686": "Mobile",
+        "687": "Minot",
+        "691": "Huntsville",
+        "692": "Beaumont",
+        "693": "Little Rock",
+        "698": "Montgomery",
+        "702": "La Crosse",
+        "705": "Wausau",
+        "709": "Tyler",
+        "710": "Hattiesburg",
+        "711": "Meridian",
+        "716": "Baton Rouge",
+        "717": "Quincy",
+        "718": "Jackson",
+        "722": "Lincoln",
+        "724": "Fargo",
+        "725": "Sioux Falls",
+        "734": "Jonesboro",
+        "736": "Bowling Green",
+        "737": "Mankato",
+        "740": "North Platte",
+        "743": "Anchorage",
+        "744": "Honolulu",
+        "745": "Fairbanks",
+        "746": "Biloxi",
+        "747": "Juneau",
+        "749": "Laredo",
+        "751": "Denver",
+        "752": "Colorado Springs",
+        "753": "Phoenix",
+        "754": "Butte-Bozeman",
+        "755": "Great Falls",
+        "756": "Billings",
+        "757": "Boise",
+        "758": "Idaho Falls",
+        "759": "Cheyenne",
+        "760": "Twin Falls",
+        "762": "Missoula",
+        "764": "Rapid City",
+        "765": "El Paso",
+        "766": "Helena",
+        "767": "Casper",
+        "770": "Salt Lake City",
+        "771": "Yuma",
+        "773": "Grand Junction",
+        "789": "Tucson",
+        "790": "Albuquerque",
+        "798": "Glendive",
+        "800": "Bakersfield",
+        "801": "Eugene",
+        "802": "Eureka",
+        "803": "Los Angeles",
+        "804": "Palm Springs",
+        "807": "San Francisco",
+        "810": "Yakima",
+        "811": "Reno",
+        "813": "Medford",
+        "819": "Seattle",
+        "820": "Portland",
+        "821": "Bend",
+        "825": "San Diego",
+        "828": "Montereys",
+        "839": "Las Vegas",
+        "855": "Santa Barbara",
+        "862": "Sacramento",
+        "866": "Fresno",
+        "868": "Chico",
+        "881": "Spokane"
+      }
     }
   },
   components: {
     SectionHero,
-    SectionZip,
+    SectionChannels,
     SectionBenefits,
     SectionDevices,
     SectionQuote,
@@ -293,110 +506,109 @@ export default {
           }, throttle);
       }
 
-      /*
-      function resizeHero(){
-          var topElement = document.getElementById('heroFrame'); // to adjust margin-top
-          var middleElement = document.getElementById('heroTV'); // to adjust max-width
-          var bottomSpacer = document.getElementById('heroReflection') // to adjust height
-          var bottomElement = document.getElementById('heroAction'); // to adjust margin-bottom or                margin-top
-
-          topElement.style = "";
-          middleElement.style = "";
-          bottomElement.style = "";
-          bottomSpacer.style = "";
-          var channelCount= document.querySelectorAll('#zip div.message h1')[0]; //
-
-          function sectionTwoPixelsAboveFold() {
-            let innerHeight = window.innerHeight;
-            let sectionTwo = channelCount.getBoundingClientRect().top + 32;
-            return innerHeight - sectionTwo
-          }
-
-          function tightenMiddleBottom(pixelsToRemove){
-            let spaceBetween = bottomElement.getBoundingClientRect().top - middleElement.getBoundingClientRect().bottom
-            pixelsToRemove = pixelsToRemove * -1
-            let maxReduction = spaceBetween + 15
-            console.log(pixelsToRemove, maxReduction)
-            if (pixelsToRemove > maxReduction) {
-              console.log('yes');
-                middleElement.style.width = middleElement.getBoundingClientRect().width - (pixelsToRemove - maxReduction) + 'px';
-                middleElement.style.maxWidth = '85%';
-                bottomSpacer.style.height = bottomSpacer.getBoundingClientRect().height - (maxReduction) + 'px';
-              
-            } else {
-              bottomSpacer.style.height = (bottomSpacer.getBoundingClientRect().height - pixelsToRemove) + 'px';
-            }
-          }
-          
-
-          // function centerButton() {
-          //   let space = bottomElement.getBoundingClientRect().top - middleElement.getBoundingClientRect().bottom;
-          //   if (space > 0) {
-          //     bottomElement.style.marginBottom = (space * .7) + 'px'
-          //     bottomElement.style.marginTop = ( space * -1 ) + 'px'
-          //   } else {
-          //     bottomElement.style.marginTop = ( space * -.7 ) + 'px'
-          //   }
-
-          // }
-
-
-
-          var pixelsAboveFold = sectionTwoPixelsAboveFold();
-
-          if ( pixelsAboveFold < 0 ) {
-            tightenMiddleBottom(pixelsAboveFold);
-            // setTimeout( function() {
-            //   centerButton()
-            // }, 500)
-          } else {
-            // centerButton();
-          }
-           
-       
-
-
-          // if ( window.innerWidth >= 710 ) {
-          //   var innerHeight = window.innerHeight;
-          // } else {
-          //   var innerHeight = bottomElement.getBoundingClientRect().top + 100;
-          // }
-          // var heroSection = document.querySelectorAll('.section--intro')[0];
-          // var heroSectionSpecs = heroSection.getBoundingClientRect();
-
-          function updateCSS(element, addOrSubtract, styleAttr, pixels) {
-            if ( addOrSubtract === 'add' ) {
-              let oldMargin = element['style'][styleAttr] ? parseInt(element['style'][styleAttr].split('px')[0]) : 0;
-              let newMargin = oldMargin + pixels;
-              newMargin = newMargin + 'px';
-              element['style'][styleAttr] = newMargin;
-            } else {
-              let oldMargin = element['style'][styleAttr] ? parseInt(element['style'][styleAttr].split('px')[0]) : 0;
-              let newMargin = oldMargin - pixels;
-              newMargin = newMargin + 'px';
-              element['style'][styleAttr] = newMargin;
-            }
-          }
-
-          // var heightDiff = innerHeight - heroSectionSpecs.height;
-
-          // if ( heightDiff > 0 ) {
-          //     var pixelsToAdd = heightDiff;
-          //     updateCSS(topElement, 'add', 'marginTop', (pixelsToAdd * .5))
-          //     updateCSS(bottomElement, 'add', 'marginTop', (pixelsToAdd * .2))
-          //     updateCSS(bottomElement, 'add', 'marginBottom', (pixelsToAdd * .2))
-          // } else if ( heightDiff < 0 ) {
-          //     var pixelsToRemove = heightDiff * -1
-          //     // updateCSS(topElement, 'subtract', 'marginTop', (pixelsToRemove * .1))
-          //     updateCSS(bottomElement, 'subtract', 'marginBottom', (pixelsToRemove))
-          // }
-
-      }
-      */
       
     },
     forceRerender() {
       this.componentKey += 1;  
+    },
+    fetchLocation(){
+      var self = this;
+      function handleErrors(response) {
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        return response;
+      }
+
+      fetch('https://api.fubo.tv/v3/location')
+        .then(handleErrors)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (responseObject) {
+          self.availableChannels.dma = responseObject.dma;
+          self.availableChannels.postal = responseObject.postal;
+          self.availableChannels.country_code = responseObject.country_code;
+          var responseData = responseObject;
+          self.availableChannels.dma = self.dma_dictionary[responseObject.dma] ? self.dma_dictionary[responseObject.dma] + ' Area' : 'Your Area';
+          })
+        .catch(function(error) {
+            console.log(error);
+        })
+    },
+    fetchChannels(){
+      var self = this;
+      // fill in availableChannels object with API calls
+      // self.availableChannels = { basicChannels: [], extraChannels: [], dma: ''},
+
+      function handleErrors(response) {
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        return response;
+      }
+
+      fetch('https://api.fubo.tv/v3/plan-manager/plans')
+        .then(handleErrors)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (responseObject) {
+          var responseData = responseObject.data;
+          if (responseData && responseData.length > 0) {
+              // basic package is first in response
+              self.availableChannels.basicChannels = responseData[0].default_package.channels;
+              self.availableChannels.basicCount = self.availableChannels.basicChannels.length;
+
+              console.log('fubo Basic channels are:')
+              console.log(self.availableChannels.basicChannels);
+
+              // if more than one item in response array, second item includes fubo extra
+              if ( responseData.length > 1 && responseData[1].default_package ) {
+                  var extraCount = responseData[1].default_package.channels.length - self.availableChannels.basicChannels.length;
+                  self.availableChannels.extraChannels = responseData[1].default_package.channels.slice(0,extraCount);
+                  self.availableChannels.extraCount = self.availableChannels.extraChannels.length;
+                  console.log('fubo Plus channels are:')
+                  console.log(self.availableChannels.extraChannels);
+              } else {
+                  console.log('No additional fubo Plus channels available')
+              }
+          } 
+          else {
+              throw Error('No channels available.')
+          }   
+          })
+          .catch(function(error) {
+              console.log(error);
+              // fetch location-agnostic US channel package
+              fetch('https://www.fubo.tv/lp/tools/channelfetcher/default.json')
+                  .then(handleErrors)
+                  .then(function (response) {
+                      return response.json();
+                  })
+                  .then(function (responseObject) {
+                      self.availableChannels.basicChannels = responseObject;
+                      self.availableChannels.basicCount = responseObject.length;
+                      console.log('default basic channels data');
+                      console.log(self.availableChannels.basicChannels);
+                  })
+                  .then(function () {
+                      fetch('https://www.fubo.tv/lp/tools/channelfetcher/default_extra.json')
+                      .then(handleErrors)
+                      .then(function (response) {
+                          return response.json();
+                      })
+                      .then(function (responseObject) {
+                          self.availableChannels.extraChannels = responseObject;
+                          self.availableChannels.extraCount = responseObject.length;
+                          console.log('default plus channels data');
+                          console.log(self.availableChannels.extraChannels);
+                      })
+                  })
+                  .catch(function(error) {
+                        console.log(error);
+                  })
+          })
     },
     carouselUpdater(e) {
       if ( e && e.toLowerCase() === 'top channels') {
@@ -412,7 +624,6 @@ export default {
       }
       this.getFilteredShows(this.showType);
       this.forceRerender();
-
     },
     getFilteredShows (type = this.showType) {
       let filteredShowsArray = this.tiles.filter( function(show) {
@@ -430,6 +641,8 @@ export default {
     window.addEventListener('scroll', this.scrollHandler)
     window.addEventListener('resize', this.resizeHandler)
     this.resizeHandler();
+    this.fetchLocation();
+    this.fetchChannels();
     this.carouselUpdater();
   },
   beforeDestroy () {
